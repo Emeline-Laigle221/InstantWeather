@@ -23,7 +23,7 @@ h1{
 .card{
     margin: 100px auto;
     width: 80%;
-    height: 60%;
+    height: 600px;
     border: 5px solid red;
     background-color: white;
 }
@@ -34,7 +34,7 @@ h1{
     border-collapse: collapse;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     flex-wrap: wrap;
 }
 
@@ -46,4 +46,35 @@ h1{
     justify-content: center;
     align-items: stretch;
     justify-items: stretch;
+}
+
+#icon{
+    margin: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#icon>img{
+    width: 60%;
+}
+
+.basic-info{
+    margin: auto;
+}
+
+.basic-info>p{
+    display: inline;
+}
+
+.additionnal-info{
+    margin: auto;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 2;
+}
+
+.additionnal-info>div>p{
+    display: inline;
 }
