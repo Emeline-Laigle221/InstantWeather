@@ -1,5 +1,5 @@
 :root{
-    font-family: 'Roboto';
+    font-family: 'Manrope';
 }
 
 * {
@@ -12,69 +12,85 @@ body{
 }
 
 header{
-    padding: 10px 0;
+    padding: 5px 0;
     background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
 }
 
-h1{
-    text-align: center;
+.titre{
+    margin-left: 100px;
+    width: 145px;
+    height: 82px;
 }
 
-.card{
-    margin: 100px auto;
-    width: 80%;
-    height: 600px;
-    border: 5px solid red;
-    background-color: white;
+nav{
+    width: 250px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 5%;
 }
 
-.header-card{
-    height: 50px;
-    border-bottom: red solid 5px;
-    border-collapse: collapse;
+nav>a{
+    color: black;
+    text-decoration: none;
+    font-size: larger;
+}
+
+.deco{
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    flex-direction: row;
+}
+
+.deco>div{
+    width: 70px;
+    height: 69px;
+}
+
+.haut-gauche{
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+}
+
+.haut-droite{
+    border-top: 1px solid white;
+    border-right: 1px solid white;
+}
+
+.info{
+    margin: auto;
+    width: 493px;
+    height: 98px;
+    background-color: #D9D9D9;
+    mix-blend-mode: luminosity;
+    border-radius: 50px 50px 50px 50px / 50px 50px 50px 50px; /* 50px pour les coins supérieurs et inférieurs, 10px pour les coins gauche et droit */
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-}
-
-.content{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 300px 300px;
-    gap: 15px;
     justify-content: center;
-    align-items: stretch;
-    justify-items: stretch;
 }
 
-#icon{
-    margin: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.formulaire{
+    width: 493px;
+    height: 136px;
+    margin-top: 50px;
 }
 
-#icon>img{
-    width: 60%;
+.bas{
+    margin: 0;
 }
 
-.basic-info{
-    margin: auto;
+.bas-gauche{
+    border-bottom: 1px solid white;
+    border-left: 1px solid white;
 }
 
-.basic-info>p{
-    display: inline;
-}
-
-.additionnal-info{
-    margin: auto;
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 2;
-    grid-row-end: 2;
-}
-
-.additionnal-info>div>p{
-    display: inline;
+.bas-droite{
+    border-bottom: 1px solid white;
+    border-right: 1px solid white;
 }
