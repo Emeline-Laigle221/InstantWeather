@@ -5,49 +5,108 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Instant Weather</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="image/cloud-sun-solid.svg">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js" defer></script>
 </head>
 <body>
     <header>
-        <h1 class="title">Instant Weather</h1>
+        <div class="div-titre">
+            <h1 class="titre">INSTANT <br> WEATHER</h1>
+        </div>
+        <nav>
+            <a href="#">ACCEUIL</a>
+            <a href="#">PARAMETRE</a>
+        </nav>
     </header>
     <main>
-        <section>
-            <div class="card">
-                <div class="header-card">
-                    <p id="ville">banane</p>
-                    <p> - </p>
-                    <p id="date">banane</p>
+        <section class="impaire">
+            <div class="deco">
+                <div class="haut-gauche"></div>
+                <div class="haut-droite"></div>
+            </div>
+            <div class="info">
+                <h2>ENTRER VOTRE COMMUNE</h2>
+            </div>
+            <div class="info formulaire">
+                <!-- Inserer le formulaire de commune -->
+            </div>
+            <div class="deco bas">
+                <div class="bas-gauche"></div>
+                <div class="bas-droite"></div>
+            </div>
+        </section>
+        <!-- Section des données -->
+        <section class="paire">
+            <div class="affichage">
+                <!-- Ville -->
+                <div class="case ville">
+                    <h2 id="ville">GAINVILLE SUR ODON</h2>
                 </div>
-                <div class="content">
-                    <div id="icon">
-                        <img src="image/smog-solid.svg" alt="wheather icon">
-                    </div>
-                    <div class="basic-info">
-                        <p>Sunny</p>
-                        <br>
-                        <p>T° Max : </p>
-                        <p id="tMax">31°C</p>
-                        <br>
-                        <p>T° Min : </p>
-                        <p id="tMin">25°C</p>
-                    </div>
-                    <div class="additionnal-info">
-                        <div id="probaRainDisplay">
-                            <p>Probability Rain : </p>
-                            <p id="probaRain">54</p>
+                <!-- Date -->
+                <div class="case date">
+                    <h2 id="date">MARDI 8 AOÛT 2023</h2>
+                </div>
+                <!-- Icone -->
+                <div class="case icone">
+                    <img id="icone" src="image/cloud-sun-solid.svg" alt="soleil derrière un nuage">
+                </div>
+                <!-- Tempétrature -->
+                <div class="case etat">
+                    <h2 id="etat">COUVERT</h2>
+                    <img id="thermo" src="image/temperature-quarter-solid.svg" alt="thermomètre">
+                    <div>
+                        <div class="valeur">
+                            <h2>MIN : </h2>
+                            <h2 id="tMin">18°C</h2>
                         </div>
-                        <div id="sunnyTimeDisplay">
-                            <p>Sunny Time : </p>
-                            <p id="sunnyTime"></p>
+                        <div class="valeur">
+                            <h2>MAX : </h2>
+                            <h2 id="tMax">22°C</h2>
                         </div>
-                        <div id="latitudeDisplay">
-                            <p>Lattitude : </p>
-                            <p id="latitude"></p>
+                    </div>
+                </div>
+                <!-- Coordonnées -->
+                <div class="case donnes-sup">
+                    <h2>COORDONNÉEES</h2>
+                    <div>
+                        <div class="valeur">
+                            <h2>LONGITUDE : </h2>
+                            <h2 id="longitude">-1.6833</h2>
+                        </div>
+                        <div class="valeur">
+                            <h2>LATITUDE : </h2>
+                            <h2 id="latitude">48.0833</h2>
+                        </div>
+                    </div>
+                </div>
+                <!-- Vent -->
+                <div class="case donnes-sup">
+                    <h2>VENT</h2>
+                    <div>
+                        <div class="valeur">
+                            <h2>DIRECTION : </h2>
+                            <h2 id="direction">45° NE</h2>
+                        </div>
+                        <div class="valeur">
+                            <h2>VITESSE : </h2>
+                            <h2 id="vitesse">15 KM/H</h2>
+                        </div>
+                    </div>
+                </div>
+                <!-- Pluie -->
+                <div class="case donnes-sup">
+                    <h2>PLUIE</h2>
+                    <div>
+                        <div class="valeur">
+                            <h2>PROBABILITÉ : </h2>
+                            <h2 id="direction">27%</h2>
+                        </div>
+                        <div class="valeur">
+                            <h2>PRÉCIPITATION : </h2>
+                            <h2 id="vitesse">10 mm</h2>
                         </div>
                     </div>
                 </div>

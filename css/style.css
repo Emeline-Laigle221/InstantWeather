@@ -1,5 +1,5 @@
 :root{
-    font-family: 'Roboto';
+    font-family: 'Manrope';
 }
 
 * {
@@ -7,74 +7,223 @@
     padding: 0;
 }
 
-body{
+.impaire{
     background-color:#1f2039;
 }
 
 header{
-    padding: 10px 0;
+    padding: 5px 0;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+}
+
+.titre{
+    margin-left: 100px;
+    width: 145px;
+    height: 82px;
+}
+
+nav{
+    width: 250px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 5%;
+}
+
+nav>a{
+    color: black;
+    text-decoration: none;
+    font-size: larger;
+}
+
+.deco{
+    padding-top: 100px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    flex-direction: row;
+}
+
+.deco>div{
+    width: 70px;
+    height: 69px;
+}
+
+.haut-gauche{
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+}
+
+.haut-droite{
+    border-top: 1px solid white;
+    border-right: 1px solid white;
+}
+
+.info{
+    margin: auto;
+    width: 493px;
+    height: 98px;
+    background-color: #D9D9D9;
+    mix-blend-mode: luminosity;
+    border-radius: 50px 50px 50px 50px / 50px 50px 50px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.formulaire{
+    width: 493px;
+    height: 136px;
+    margin-top: 50px;
+}
+
+.bas{
+    padding: 0 0 100px 0;
+}
+
+.bas-gauche{
+    border-bottom: 1px solid white;
+    border-left: 1px solid white;
+}
+
+.bas-droite{
+    border-bottom: 1px solid white;
+    border-right: 1px solid white;
+}
+.paire{
     background-color: white;
 }
 
-h1{
+.case{
+    margin: 50px 5% 30px 5%;
+    background-color: #DCD5EF;
+    border-radius: 50px 50px 50px 50px / 50px 50px 50px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.affichage{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.ville{
+    width: 40%;
+    height: 111.242px;
+}
+
+.date{
+    width: 40%;
+    height: 111.242px;
+}
+
+.icone{
+    width: 40%;
+    height: 278.973px;
+}
+
+#icone{
+    width: 264.962px;
+    height: 208.963px;
+}
+
+.etat{
+    width: 40%;
+    height: 278.973px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50px 228.962px;
+    justify-items: center;
+}
+
+#etat{
+    grid-column-start: 1;
+    grid-column-end: 3;
     text-align: center;
 }
 
-.card{
-    margin: 100px auto;
-    width: 80%;
-    height: 600px;
-    border: 5px solid red;
-    background-color: white;
-}
-
-.header-card{
-    height: 50px;
-    border-bottom: red solid 5px;
-    border-collapse: collapse;
+.température{
+    width: 100%;
+    height: 278.973px;
     display: flex;
+    flex-direction: row;
     align-items: center;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+    justify-content: center;
 }
 
-.content{
+#thermo{
+    width: 121.255px;
+    height: 166.862px;
+}
+
+.valeur{
+    width: 100%;
+    margin-left: 5%;
+    margin-bottom: 5%;
+}
+
+.valeur>h2{
+    display: inline-block;
+}
+
+.donnes-sup{
+    margin: 50px 2% 30px 2%;
+    width: 27%;
+    height: 278.973px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 300px 300px;
-    gap: 15px;
-    justify-content: center;
-    align-items: stretch;
-    justify-items: stretch;
+    grid-template-columns: 100%;
+    grid-template-rows: 50px 228.962px;
+    justify-items: center;
 }
 
-#icon{
-    margin: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+@media screen and (max-width: 720px){
+    .titre{
+        margin-left: 20px;
+        font-size: 150%;
+    }
 
-#icon>img{
-    width: 60%;
-}
+    nav{
+        width: 250px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+    }
+    
+    nav>a{
+        color: black;
+        text-decoration: none;
+        font-size: larger;
+    }
+    
+    .info{
+        width: 80%;
+    }
 
-.basic-info{
-    margin: auto;
-}
+    .info>h2{
+        font-size: larger;
+    }
 
-.basic-info>p{
-    display: inline;
-}
+    .deco>*{
+        display: none;
+    }
+    
+    .affichage{
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+    }
 
-.additionnal-info{
-    margin: auto;
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 2;
-    grid-row-end: 2;
-}
-
-.additionnal-info>div>p{
-    display: inline;
+    .case{
+        margin: 20px 1% 5px 1%;
+        width: 80%;
+    }
 }
