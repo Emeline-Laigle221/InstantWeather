@@ -99,7 +99,7 @@ nav>a{
 }
 
 .case{
-    margin: 50px 5% 30px 5%;
+    margin: 10px 5% 10px 5%;
     background-color: #DCD5EF;
     border-radius: 50px 50px 50px 50px / 50px 50px 50px 50px;
     display: flex;
@@ -112,7 +112,7 @@ nav>a{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 .ville{
@@ -127,7 +127,7 @@ nav>a{
 
 .icone{
     width: 40%;
-    height: 278.973px;
+    height: 258.973px;
 }
 
 #icone{
@@ -137,7 +137,7 @@ nav>a{
 
 .etat{
     width: 40%;
-    height: 278.973px;
+    height: 258.973px;
     display: grid;
     grid-template-columns: 50% 50%;
     grid-template-rows: 50px 228.962px;
@@ -175,14 +175,42 @@ nav>a{
 }
 
 .donnes-sup{
-    margin: 50px 2% 30px 2%;
-    width: 27%;
+    margin: 10px 2% 10px 2%;
+    width: 20%;
     height: 278.973px;
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: 50px 228.962px;
     justify-items: center;
 }
+
+.param{
+    padding: 105px 0;
+}
+
+.param>*{
+    color: white;
+}
+
+.rectangle{
+    margin: auto;
+    width: 615px;
+    height: 413px;
+    background: #393c69;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rectangle>div{
+    margin-top: 50px;
+}
+
+.formParam{
+    
+}
+
+
 
 @media screen and (max-width: 720px){
     .titre{
