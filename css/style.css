@@ -277,6 +277,16 @@ footer{
         grid-template-rows: 50px 150px;
         justify-items: center;
     }
+
+    .donnes-sup-solo{
+        margin: 10px 2% 10px 2%;
+        width: 90%;
+        height: 158.973px;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 50px 108.962px;
+        justify-items: center;
+    }
 }
 
 @media screen and (max-width: 720px){
