@@ -4,7 +4,7 @@
 
 //Éléments du document html
 const cp_entre = document.getElementById("code_postal")
-const commune_entre = document.getElementById("commune")
+const commune_entre = document.getElementById("SelectVille")
 
 /**
  * Écouteur sur le champ du code postal, permet d'activer le champ Commune lorsqu'un code postal valide est rentré. 
