@@ -1,52 +1,38 @@
 const envoie = document.getElementById("envoie");
 const apiUrl = 'https://geo.api.gouv.fr/communes?codePostal=';
 const cp = document.getElementById("cp");
-const ville = document.getElementById("ville");
-const villeListe = document.getElementById("villeListe");
+const SelectVille = document.getElementById("SelectVille");
+console.log(SelectVille)
 const afficheProp = document.getElementById("afficheProp");
+
 let url;
 let ListeVille;
 
-function test(){
-    url = apiUrl+cp.value;
+function test() {
+    url = apiUrl + cp.value;
     fetch(url)
-    .then(response => response.json())
-    .then(data => {
-        // Traitemeent des données renvoyées par l'API ici
-        ville.value = data[0].nom; //préremplie le contenue de l'input ville avec la première valeur de la ville
-        ListeVille = data; //copie le tableau data dans une variable
-    })
-    .catch(error => {
-        console.error('Erreur lors de la requête : ', error);
-    });
-}
+        .then(response => response.json())
+        .then(data => {
+            // Traitement des données renvoyées par l'API ici
+            ListeVille = data; //copie le tableau data dans une variable
+            if (ListeVille && ListeVille.length >= 1) { //Si le nombre d'éléments de ListeVille (data) est sup à 1, alors il y a au moins une ville
+                console.log("ici")
 
-function afficherVillesCorrespondantes(){
-    //Permet d'afficher les propositions de villes quand on passe la souris sur l'input "ville"
-    villeListe.innerHTML = ''; //Vide la liste
-    if(ListeVille && ListeVille.length >= 1){ //Si le nombre d'éléments de ListeVille (data) est sup à 1, alors il y a au moins une ville
-        const ul = document.createElement("ul"); //Va servir à stocker toutes les villes
-        ListeVille.forEach(v => { //Parcours les éléments de ListeVille, en les stockant dans v
-            const li = document.createElement("li"); //crée un élément
-            li.textContent = v.nom; //Remplis cet élément avec le nom de la ville parcourue
 
-            li.addEventListener("click", () => {
-                //Fais en sorte que la liste disparaisse quand on clique sur une proposition de ville
-                ville.value = v.nom; //l'input prend la valeur de l'élément cliqué
-                villeListe.innerHTML = ''; //Cache la liste après avoir sélectionné une ville
-            });
+                ListeVille.forEach(v => {
 
-            ul.appendChild(li); //ajoute l'élément "li" à l'élément "ul"
+                    let option = document.createElement("option");
+                    option.textContent = v.nom;
+                    option.value = v.code;
+                    SelectVille.appendChild(option)
+                    
+
+                });
+            }
+        })
+        .catch(error => {
+            console.error('Erreur lors de la requête : ', error);
         });
-        villeListe.appendChild(ul); //ajoute ul à la l'élément villeListe
-    }
 }
 
 envoie.addEventListener("click", test);
-ville.addEventListener("mouseover", () => {
-    afficherVillesCorrespondantes(); // Appelez la fonction pour afficher les villes correspondantes
-});
-afficheProp.addEventListener("mouseleave", () => {
-    //permet de ne plus afficher les propositions de villes quand on clique l'input et les propositions
-    villeListe.innerHTML = '';
-});
