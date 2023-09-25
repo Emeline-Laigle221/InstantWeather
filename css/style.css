@@ -7,6 +7,10 @@
     padding: 0;
 }
 
+section{
+    height: 100%;
+}
+
 .impaire{
     background-color:#1f2039;
 }
@@ -94,6 +98,7 @@ nav>a{
     border-bottom: 1px solid white;
     border-right: 1px solid white;
 }
+
 .paire{
     background-color: white;
 }
@@ -135,6 +140,11 @@ nav>a{
     height: 208.963px;
 }
 
+.temps{
+    display: flex;
+    justify-content: center
+}
+
 .etat{
     width: 40%;
     height: 258.973px;
@@ -166,8 +176,7 @@ nav>a{
 
 .valeur{
     width: 100%;
-    margin-left: 5%;
-    margin-bottom: 5%;
+    margin: 3% 5% 3% 5%;
 }
 
 .valeur>h2{
@@ -213,6 +222,11 @@ nav>a{
 
 
 @media screen and (max-width: 720px){
+
+    section{
+        height: 100%;
+    }
+
     .titre{
         margin-left: 20px;
         font-size: 150%;
