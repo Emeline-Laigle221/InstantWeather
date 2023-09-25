@@ -50,7 +50,7 @@ nav>a{
 }
 
 .deco{
-    padding-top: 100px;
+    padding: 150px 0 75px 0;
     display: flex;
     justify-content: space-around;
     flex-wrap: nowrap;
@@ -91,7 +91,7 @@ nav>a{
 }
 
 .bas{
-    padding: 0 0 100px 0;
+    padding: 50px 0 200px 0;
 }
 
 .bas-gauche{
@@ -116,9 +116,11 @@ nav>a{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.8); 
 }
 
 .affichage{
+    padding: 100px 0 100px 0;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -140,10 +142,10 @@ nav>a{
     height: 298.973px;
 }
 
-#icone{
-    width: 264.962px;
-    height: 208.963px;
-}
+/* #icone{
+    width: 265px;
+    height: 208px;
+} */
 
 .temps{
     display: flex;
@@ -188,7 +190,21 @@ nav>a{
     display: inline-block;
 }
 
-.donnes-sup{
+.donnes-sup-none{
+    display: none;
+}
+
+.donnes-sup-solo{
+    margin: 10px 2% 10px 2%;
+    width: 90%;
+    height: 158.973px;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 50px 108.962px;
+    justify-items: center;
+}
+
+/* .donnes-sup-grid{
     margin: 10px 2% 10px 2%;
     width: 25%;
     height: 278.973px;
@@ -196,6 +212,10 @@ nav>a{
     grid-template-columns: 100%;
     grid-template-rows: 50px 228.962px;
     justify-items: center;
+} */
+
+.precipitation{
+    display: none;
 }
 
 .param{
@@ -219,6 +239,8 @@ nav>a{
 footer{
     background-color: white;
     height: 50px;
+    position: relative;
+    bottom: calc(100% - 50px); 
 }
 
 .rectangle>div{
