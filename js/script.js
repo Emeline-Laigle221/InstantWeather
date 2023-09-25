@@ -17,7 +17,7 @@ function traitementMeteo(){
                 document.getElementById('latitude').textContent=data.city.latitude; //met à jour la latitude de la ville sélectionnée 
                 document.getElementById('longitude').textContent=data.city.longitude; //met à jour la longitude de la ville sélectionnée 
                 let date= new Date(Date.now());
-                document.getElementById('date').textContent=date; //met à jour la date d'aujourd'hui de la ville sélectionnée 
+                document.getElementById('date').textContent=creer_date(date); //met à jour la date d'aujourd'hui de la ville sélectionnée 
                 document.getElementById('ville').textContent=data.city.name; //met à jour le nom de la ville sélectionnée sur la page html 
                 document.getElementById('vitesse').textContent=data.forecast.wind10m+" km/h"; //met à jour la vitesse du vent de la ville sélectionnée 
                 document.getElementById('tempsSoleil').textContent=data.forecast.sun_hours +" h"; //met à jour le temps d'ensoleillement de la ville sélectionnée 
@@ -36,3 +36,58 @@ let envoyer = document.getElementById('envoyer').addEventListener('click',()=>{
 
 
 
+function creer_date(date){
+    let chaine_date = "";
+
+    //Ajout du jour de la semaine
+    if(date.getDay()== 1){
+        chaine_date += "Lundi";
+    }else if(date.getDay()== 2){
+        chaine_date += "Mardi";
+    }else if(date.getDay()== 3){
+        chaine_date += "Mercredi";
+    }else if(date.getDay()== 4){
+        chaine_date += "Jeudi";
+    }else if(date.getDay()== 5){
+        chaine_date += "Vendredi";
+    }else if(date.getDay()== 6){
+        chaine_date += "Samedi";
+    }else if(date.getDay()== 7){
+        chaine_date += "Dimanche";
+    }
+
+    //Ajout du numéro du jour dans le mois
+    chaine_date += " " + date.getUTCDate(); 
+
+    //Ajout du mois
+    switch(date.getMonth() + 1){
+        case 1: chaine_date += " " + "Janvier";
+        break;
+        case 2: chaine_date += " " + "Février";
+        break;
+        case 3: chaine_date += " " + "Mars";
+        break;
+        case 4: chaine_date += " " + "Avril";
+        break;
+        case 5: chaine_date += " " + "Mai";
+        break;
+        case 6: chaine_date += " " + "Juin";
+        break;
+        case 7: chaine_date += " " + "Juillet";
+        break;
+        case 8: chaine_date += " " + "Août";
+        break;
+        case 9: chaine_date += " " + "Septembre";
+        break;
+        case 10: chaine_date += " " + "Octobre";
+        break;
+        case 11: chaine_date += " " + "Novembre";
+        break;
+        case 12: chaine_date += " " + "Décembre";
+    }
+
+    //Ajout de l'année
+    chaine_date += " " + date.getFullYear();
+
+    return chaine_date;
+}
