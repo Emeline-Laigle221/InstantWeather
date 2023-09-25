@@ -1,5 +1,5 @@
 :root{
-    font-family: 'Roboto';
+    font-family: 'Manrope';
 }
 
 * {
@@ -7,74 +7,334 @@
     padding: 0;
 }
 
-body{
+.impaire{
     background-color:#1f2039;
 }
 
+section{
+    height: 100%;
+}
+
+.impaire{
+    background-color:#1f2039;
+    height: calc(100%);
+}
+
 header{
-    padding: 10px 0;
+    padding: 5px 0;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+}
+
+.titre{
+    margin-left: 100px;
+    width: 145px;
+    height: 82px;
+}
+
+nav{
+    width: 250px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 5%;
+}
+
+nav>a{
+    color: black;
+    text-decoration: none;
+    font-size: larger;
+}
+
+.deco{
+    padding: 8% 0 3% 0;
+
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    flex-direction: row;
+}
+
+.deco>div{
+    width: 70px;
+    height: 69px;
+}
+
+.haut-gauche{
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+}
+
+.haut-droite{
+    border-top: 1px solid white;
+    border-right: 1px solid white;
+}
+
+.info{
+    margin: auto;
+    width: 493px;
+    height: 98px;
+    background-color: #D9D9D9;
+    mix-blend-mode: luminosity;
+    border-radius: 50px 50px 50px 50px / 50px 50px 50px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.formulaire{
+    width: 493px;
+    height: 136px;
+    margin-top: 50px;
+}
+
+.bas{
+
+    padding: 50px 0 200px 0;
+
+}
+
+.bas-gauche{
+    border-bottom: 1px solid white;
+    border-left: 1px solid white;
+}
+
+.bas-droite{
+    border-bottom: 1px solid white;
+    border-right: 1px solid white;
+}
+
+
+.paire{
     background-color: white;
 }
 
-h1{
+.case{
+    margin: 20px 5% 30px 5%;
+    background-color: #DCD5EF;
+    border-radius: 50px 50px 50px 50px / 50px 50px 50px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.8); 
+}
+
+.affichage{
+    padding: 6% 0 6% 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+}
+
+
+.ville{
+    width: 40%;
+    height: 111.242px;
+}
+
+.date{
+    width: 40%;
+    height: 111.242px;
+}
+
+.icone{
+    width: 40%;
+    height: 298.973px;
+}
+
+/* #icone{
+    width: 265px;
+    height: 208px;
+} */
+
+.temps{
+    display: flex;
+    justify-content: center
+}
+
+.etat{
+    width: 40%;
+    height: 298.973px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50px 228.962px;
+    justify-items: center;
+}
+
+#etat{
+    grid-column-start: 1;
+    grid-column-end: 3;
     text-align: center;
 }
 
-.card{
-    margin: 100px auto;
-    width: 80%;
-    height: 600px;
-    border: 5px solid red;
-    background-color: white;
-}
-
-.header-card{
-    height: 50px;
-    border-bottom: red solid 5px;
-    border-collapse: collapse;
+.température{
+    width: 100%;
+    height: 278.973px;
     display: flex;
+    flex-direction: row;
     align-items: center;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+    justify-content: center;
 }
 
-.content{
+#thermo{
+    width: 121.255px;
+    height: 166.862px;
+}
+
+.valeur{
+    width: 100%;
+    margin: 3% 5% 3% 5%;
+
+}
+
+.valeur>h2{
+    display: inline-block;
+}
+
+
+.donnes-sup-none{
+    display: none;
+}
+
+.donnes-sup-solo{
+    margin: 10px 2% 10px 2%;
+    width: 90%;
+    height: 158.973px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 300px 300px;
-    gap: 15px;
-    justify-content: center;
-    align-items: stretch;
-    justify-items: stretch;
+    grid-template-columns: 100%;
+    grid-template-rows: 50px 108.962px;
+    justify-items: center;
 }
 
-#icon{
-    margin: 50px;
+/* .donnes-sup-grid{
+    margin: 10px 2% 10px 2%;
+    width: 25%;
+    height: 278.973px;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 50px 228.962px;
+    justify-items: center;
+} */
+
+.precipitation{
+    display: none;
+}
+
+.param{
+    padding: 105px 0;
+}
+
+.param>*{
+    color: white;
+}
+
+.rectangle{
+    margin: auto;
+    width: 815px;
+    height: 513px;
+    background: #393c69;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
 }
 
-#icon>img{
-    width: 60%;
+footer{
+    background-color: white;
+    height: 50px;
+    position: relative;
+    bottom: calc(100% - 50px); 
 }
 
-.basic-info{
-    margin: auto;
+.rectangle>div{
+    margin-top: 50px;
 }
 
-.basic-info>p{
-    display: inline;
+@media screen and (max-width: 1000px){
+    *{
+        font-size: large;
+    }
+
+    h2{
+        padding-left: 20px; 
+    }
+
+    .case{
+        width: 40%;
+    }
+
+    .donnes-sup{
+        margin: 10px 0 10px 0;
+        width: 250%;
+        height: 30%;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 50px 150px;
+        justify-items: center;
+    }
+
+    .donnes-sup-solo{
+        margin: 10px 2% 10px 2%;
+        width: 90%;
+        height: 158.973px;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 50px 108.962px;
+        justify-items: center;
+    }
 }
 
-.additionnal-info{
-    margin: auto;
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 2;
-    grid-row-end: 2;
-}
+@media screen and (max-width: 720px){
 
-.additionnal-info>div>p{
-    display: inline;
+    .titre{
+        margin-left: 20px;
+        font-size: 150%;
+    }
+
+    nav{
+        width: 250px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+    }
+    
+    nav>a{
+        color: black;
+        text-decoration: none;
+        font-size: larger;
+    }
+    
+    .info{
+        width: 80%;
+    }
+
+    h2{
+        font-size: larger;
+    }
+
+    .deco>*{
+        display: none;
+    }
+    
+    .affichage{
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+
+    .case{
+        margin: 20px 1% 5px 1%;
+        width: 80%;
+    }
+
+    .etat>div{
+        margin-right: 10px;
+    }
+
 }
