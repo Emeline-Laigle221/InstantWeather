@@ -7,7 +7,7 @@
     padding: 0;
 }
 
-body{
+.impaire{
     background-color:#1f2039;
 }
 
@@ -51,6 +51,7 @@ nav>a{
 
 .deco{
     padding: 150px 0 75px 0;
+
     display: flex;
     justify-content: space-around;
     flex-wrap: nowrap;
@@ -91,7 +92,9 @@ nav>a{
 }
 
 .bas{
+
     padding: 50px 0 200px 0;
+
 }
 
 .bas-gauche{
@@ -103,6 +106,7 @@ nav>a{
     border-bottom: 1px solid white;
     border-right: 1px solid white;
 }
+
 
 .paire{
     background-color: white;
@@ -125,7 +129,9 @@ nav>a{
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
+
 }
+
 
 .ville{
     width: 40%;
@@ -184,11 +190,13 @@ nav>a{
 .valeur{
     width: 100%;
     margin: 3% 5% 3% 5%;
+
 }
 
 .valeur>h2{
     display: inline-block;
 }
+
 
 .donnes-sup-none{
     display: none;
@@ -314,7 +322,9 @@ footer{
         margin: 20px 1% 5px 1%;
         width: 80%;
     }
+
     .etat>div{
         margin-right: 10px;
     }
+
 }

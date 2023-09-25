@@ -1,0 +1,93 @@
+// Sélectionne l'élément HTML avec l'ID 'communeSelect'
+const communeSelect = document.getElementById('communeSelect');
+
+
+// Définit une fonction de traitement pour la météo
+function traitementMeteo(){
+    // Récupère la valeur sélectionnée dans la liste déroulante communeSelect
+    const commune= communeSelect.value;
+    if(commune!=null){
+            // Effectue une requête fetch pour obtenir les données météorologiques
+        fetch(`https://api.meteo-concept.com/api/forecast/daily/0?token=a40f714d88661e3a21d0b715f5867d5953a2231d2b9beefa5838800b5fc40d8d&insee=${commune}`).then(response=> 
+            response.json().then(data => {
+                console.log(data);
+                document.getElementById('tMin').textContent=data.forecast.tmin; //met à jour la température minimal de la ville sélectionnée 
+                document.getElementById('tMax').textContent=data.forecast.tmax; //met à jour la température maximal de la ville sélectionnée 
+                document.getElementById('probabilite').textContent=data.forecast.probarain+ "%"; //met à jour la probabilité de pluie en % de la ville sélectionnée 
+                document.getElementById('latitude').textContent=data.city.latitude; //met à jour la latitude de la ville sélectionnée 
+                document.getElementById('longitude').textContent=data.city.longitude; //met à jour la longitude de la ville sélectionnée 
+                let date= new Date(Date.now());
+                document.getElementById('date').textContent=creer_date(date); //met à jour la date d'aujourd'hui de la ville sélectionnée 
+                document.getElementById('ville').textContent=data.city.name; //met à jour le nom de la ville sélectionnée sur la page html 
+                //document.getElementById('vitesse').textContent=data.forecast.wind10m+" km/h"; //met à jour la vitesse du vent de la ville sélectionnée 
+                document.getElementById('tempsSoleil').textContent=data.forecast.sun_hours +" h"; //met à jour le temps d'ensoleillement de la ville sélectionnée 
+                //document.getElementById('direction').textContent=data.forecast.dirwind10m+" °"; //met à jour le degrès de direction du vent de la ville sélectionnée 
+                //document.getElementById('precipitation').textContent=data.forecast.rr10+" mm";//met à jour le cumul de pluie sur la journée en mm de la ville sélectionnée 
+            })
+        ).catch((err)=>console.log('Erreur : '+ err));
+    }
+}
+
+// Sélectionne l'élément HTML avec l'ID 'envoyer' et ajoute un écouteur d'événements 'click'
+let envoyer = document.getElementById('envoyer').addEventListener('click',()=>{
+        // Appelle la fonction de traitementMeteo lorsque le bouton est cliqué
+    traitementMeteo();
+})
+
+
+
+function creer_date(date){
+    let chaine_date = "";
+
+    //Ajout du jour de la semaine
+    if(date.getDay()== 1){
+        chaine_date += "Lundi";
+    }else if(date.getDay()== 2){
+        chaine_date += "Mardi";
+    }else if(date.getDay()== 3){
+        chaine_date += "Mercredi";
+    }else if(date.getDay()== 4){
+        chaine_date += "Jeudi";
+    }else if(date.getDay()== 5){
+        chaine_date += "Vendredi";
+    }else if(date.getDay()== 6){
+        chaine_date += "Samedi";
+    }else if(date.getDay()== 7){
+        chaine_date += "Dimanche";
+    }
+
+    //Ajout du numéro du jour dans le mois
+    chaine_date += " " + date.getUTCDate(); 
+
+    //Ajout du mois
+    switch(date.getMonth() + 1){
+        case 1: chaine_date += " " + "Janvier";
+        break;
+        case 2: chaine_date += " " + "Février";
+        break;
+        case 3: chaine_date += " " + "Mars";
+        break;
+        case 4: chaine_date += " " + "Avril";
+        break;
+        case 5: chaine_date += " " + "Mai";
+        break;
+        case 6: chaine_date += " " + "Juin";
+        break;
+        case 7: chaine_date += " " + "Juillet";
+        break;
+        case 8: chaine_date += " " + "Août";
+        break;
+        case 9: chaine_date += " " + "Septembre";
+        break;
+        case 10: chaine_date += " " + "Octobre";
+        break;
+        case 11: chaine_date += " " + "Novembre";
+        break;
+        case 12: chaine_date += " " + "Décembre";
+    }
+
+    //Ajout de l'année
+    chaine_date += " " + date.getFullYear();
+
+    return chaine_date;
+}

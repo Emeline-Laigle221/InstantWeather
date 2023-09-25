@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Instant Weather</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="image/cloud-sun-solid.svg">
@@ -19,6 +20,7 @@
         <nav>
             <a href="#">ACCEUIL</a>
             <a href="parametre.html">PARAMETRE</a>
+
         </nav>
     </header>
     <main>
@@ -32,6 +34,9 @@
             </div>
             <div class="info formulaire">
                 <!-- Inserer le formulaire de commune -->
+                <input type="text" id="communeSelect">
+                <input id="envoyer" type="submit" value="Envoyer" />
+
             </div>
             <div class="deco bas">
                 <div class="bas-gauche"></div>
@@ -41,7 +46,6 @@
         <!-- Section des données -->
         <section class="paire">
             <div class="affichage">
-
                 <!-- Ville -->
                 <div class="case ville">
                     <h2 id="ville">GAINVILLE SUR ODON</h2>
@@ -51,7 +55,6 @@
                 <div class="case date">
                     <h2 id="date">MARDI 8 AOÛT 2023</h2>
                 </div>
-
                 <!-- Icone -->
                 <div class="case icone">
                     <img id="icone" src="image/cloud-sun-solid.svg" alt="soleil derrière un nuage">
@@ -60,7 +63,6 @@
                         <h2 id="tempsSoleil">3H</h2>
                     </div>
                 </div>
-
                 <!-- Tempétrature -->
                 <div class="case etat">
                     <h2 id="etat">COUVERT</h2>
@@ -74,6 +76,7 @@
                             <h2>MAX : </h2>
                             <h2 id="tMax">22°C</h2>
                         </div>
+
                         
                     </div>
                 </div>
@@ -92,9 +95,9 @@
                         </div>
                     </div>
                 </div>
-
                 <!-- Vent -->
                 <div class="case donnes-sup-none">
+
                     <h2>VENT</h2>
                     <div>
                         <div class="valeur">
@@ -107,16 +110,16 @@
                         </div>
                     </div>
                 </div>
-
                 <!-- Pluie -->
                 <div class="case donnes-sup-solo">
+
                     <h2>PLUIE</h2>
                     <div>
                         <div class="valeur">
                             <h2>PROBABILITÉ : </h2>
                             <h2 id="probabilite">27%</h2>
                         </div>
-                        <div class="valeur precipitation">
+                        <div class="valeur">
                             <h2>PRÉCIPITATION : </h2>
                             <h2 id="precipitation">10 mm</h2>
                         </div>
