@@ -7,12 +7,17 @@
     padding: 0;
 }
 
+body{
+    background-color:#1f2039;
+}
+
 section{
     height: 100%;
 }
 
 .impaire{
     background-color:#1f2039;
+    height: calc(100%);
 }
 
 header{
@@ -104,7 +109,7 @@ nav>a{
 }
 
 .case{
-    margin: 10px 5% 10px 5%;
+    margin: 20px 5% 30px 5%;
     background-color: #DCD5EF;
     border-radius: 50px 50px 50px 50px / 50px 50px 50px 50px;
     display: flex;
@@ -132,7 +137,7 @@ nav>a{
 
 .icone{
     width: 40%;
-    height: 258.973px;
+    height: 298.973px;
 }
 
 #icone{
@@ -147,7 +152,7 @@ nav>a{
 
 .etat{
     width: 40%;
-    height: 258.973px;
+    height: 298.973px;
     display: grid;
     grid-template-columns: 50% 50%;
     grid-template-rows: 50px 228.962px;
@@ -185,7 +190,7 @@ nav>a{
 
 .donnes-sup{
     margin: 10px 2% 10px 2%;
-    width: 20%;
+    width: 25%;
     height: 278.973px;
     display: grid;
     grid-template-columns: 100%;
@@ -203,29 +208,48 @@ nav>a{
 
 .rectangle{
     margin: auto;
-    width: 615px;
-    height: 413px;
+    width: 815px;
+    height: 513px;
     background: #393c69;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+footer{
+    background-color: white;
+    height: 50px;
+}
+
 .rectangle>div{
     margin-top: 50px;
 }
 
-.formParam{
-    
+@media screen and (max-width: 1000px){
+    *{
+        font-size: large;
+    }
+
+    h2{
+        padding-left: 20px; 
+    }
+
+    .case{
+        width: 40%;
+    }
+
+    .donnes-sup{
+        margin: 10px 0 10px 0;
+        width: 250%;
+        height: 30%;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 50px 150px;
+        justify-items: center;
+    }
 }
 
-
-
 @media screen and (max-width: 720px){
-
-    section{
-        height: 100%;
-    }
 
     .titre{
         margin-left: 20px;
@@ -250,7 +274,7 @@ nav>a{
         width: 80%;
     }
 
-    .info>h2{
+    h2{
         font-size: larger;
     }
 
@@ -267,5 +291,8 @@ nav>a{
     .case{
         margin: 20px 1% 5px 1%;
         width: 80%;
+    }
+    .etat>div{
+        margin-right: 10px;
     }
 }
