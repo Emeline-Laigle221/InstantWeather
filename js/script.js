@@ -1,5 +1,57 @@
 // Sélectionne l'élément HTML avec l'ID 'communeSelect'
-const communeSelect = document.getElementById('communeSelect');
+const communeSelect = document.getElementById('SelectVille');
+const envoie = document.getElementById("envoie");
+const apiUrl = 'https://geo.api.gouv.fr/communes?codePostal=';
+const cp = document.getElementById("cp");
+const SelectVille = document.getElementById("SelectVille");
+
+
+
+// Sélectionne l'élément HTML avec l'ID 'envoyer' et ajoute un écouteur d'événements 'click'
+document.getElementById('envoyer').addEventListener('click',()=>{
+    // Appelle la fonction de traitementMeteo lorsque le bouton est cliqué
+traitementMeteo();
+})
+
+
+//appelle fonction test pour liste commune
+
+envoie.addEventListener('click',()=>{
+    let nb_cp = parseInt(cp.value)
+
+    if(nb_cp > 9999){
+        SelectVille.disabled = false
+        test();
+    }else{
+        SelectVille.disabled = true
+    }
+});
+
+
+
+//fonction qui gère la liste des communes 
+function test() {
+    let url;
+    let ListeVille;
+    url = apiUrl + cp.value;
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            // Traitement des données renvoyées par l'API ici
+            ListeVille = data; //copie le tableau data dans une variable
+            if (ListeVille && ListeVille.length >= 1) { //Si le nombre d'éléments de ListeVille (data) est sup à 1, alors il y a au moins une ville
+                ListeVille.forEach(v => {
+                    let option = document.createElement("option");
+                    option.textContent = v.nom;
+                    option.value = v.code;
+                    SelectVille.appendChild(option)
+                });
+            }
+        })
+        .catch(error => {
+            console.error('Erreur lors de la requête : ', error);
+        });
+}
 
 
 // Définit une fonction de traitement pour la météo
@@ -27,12 +79,6 @@ function traitementMeteo(){
         ).catch((err)=>console.log('Erreur : '+ err));
     }
 }
-
-// Sélectionne l'élément HTML avec l'ID 'envoyer' et ajoute un écouteur d'événements 'click'
-let envoyer = document.getElementById('envoyer').addEventListener('click',()=>{
-        // Appelle la fonction de traitementMeteo lorsque le bouton est cliqué
-    traitementMeteo();
-})
 
 
 

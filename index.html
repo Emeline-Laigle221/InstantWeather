@@ -11,7 +11,6 @@
     <link rel="icon" type="image/x-icon" href="image/cloud-sun-solid.svg">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js" defer></script>
-    <script src="js/cp.js" defer></script>
 </head>
 <body>
     <header>
@@ -34,10 +33,19 @@
                 <h2>ENTRER VOTRE COMMUNE</h2>
             </div>
             <div class="info formulaire">
-                <!-- Inserer le formulaire de commune -->
-                <input type="text" id="communeSelect">
-                <input id="envoyer" type="submit" value="Envoyer" />
-
+                    <ul>
+                        <li>
+                            <label >Code Postal</label>
+                            <input type="text" id="cp" maxlength="5" placeholder="Renseigner le code postal"/>
+                            <button id = "envoie">envoie</button>
+                        </li>
+                        <li>
+                            <label for="SelectVille">ville : </label>
+                            <select id="SelectVille" disable="true"></select>
+                            <button id="envoyer">Rechercher</button>
+                        </li>
+                    </ul>
+                    
             </div>
             <div class="deco bas">
                 <div class="bas-gauche"></div>
