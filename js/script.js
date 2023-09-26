@@ -16,7 +16,7 @@ traitementMeteo();
 
 //appelle fonction test pour liste commune
 
-envoie.addEventListener('click',()=>{
+cp.addEventListener('change',()=>{
     let nb_cp = parseInt(cp.value)
 
     if(nb_cp > 9999){
