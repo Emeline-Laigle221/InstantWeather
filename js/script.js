@@ -14,14 +14,14 @@ traitementMeteo();
 })
 
 
-//appelle fonction test pour liste commune
+//appelle fonction chercheCP pour liste commune
 
-envoie.addEventListener('click',()=>{
+cp.addEventListener('change',()=>{
     let nb_cp = parseInt(cp.value)
 
     if(nb_cp > 9999){
         SelectVille.disabled = false
-        test();
+        chercheCP();
     }else{
         SelectVille.disabled = true
     }
@@ -30,17 +30,18 @@ envoie.addEventListener('click',()=>{
 
 
 //fonction qui gère la liste des communes 
-function test() {
-    let url;
-    let ListeVille;
-    url = apiUrl + cp.value;
-    fetch(url)
+//fonction qui gère la liste des communes 
+function chercheCP() {
+    SelectVille.innerHTML = ''; //vide le SelectVille pour éviter les bugs
+    let url; //définie la variable url
+    url = apiUrl + cp.value; //fusionne dans url Le contenue d'apiURL avec un code postal
+    fetch(url) //utilise l'url obtenue pour le fetch, et mettre le tableau qu'il contient dans data
         .then(response => response.json())
         .then(data => {
             // Traitement des données renvoyées par l'API ici
-            ListeVille = data; //copie le tableau data dans une variable
-            if (ListeVille && ListeVille.length >= 1) { //Si le nombre d'éléments de ListeVille (data) est sup à 1, alors il y a au moins une ville
-                ListeVille.forEach(v => {
+            if (data && data.length >= 1) { //Si le nombre d'éléments de data est sup à 1, alors il y a au moins une ville
+                data.forEach(v => { //parcours le tableau data. v prend la valeur de chaque ville
+                    //crée un élément "option", qui va prendre une valeur égal au code postal, et un nom égal au nom de la ville
                     let option = document.createElement("option");
                     option.textContent = v.nom;
                     option.value = v.code;
@@ -48,7 +49,7 @@ function test() {
                 });
             }
         })
-        .catch(error => {
+        .catch(error => { //gestion erreur
             console.error('Erreur lors de la requête : ', error);
         });
 }
@@ -136,4 +137,9 @@ function creer_date(date){
     chaine_date += " " + date.getFullYear();
 
     return chaine_date;
+}
+
+function scrollToSection2() {
+    const section2 = document.getElementById('section2');
+    section2.scrollIntoView({ behavior: 'smooth' });
 }

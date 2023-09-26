@@ -37,12 +37,11 @@
                         <li>
                             <label >Code Postal</label>
                             <input type="text" id="cp" maxlength="5" placeholder="Renseigner le code postal"/>
-                            <button id = "envoie">envoie</button>
                         </li>
                         <li>
                             <label for="SelectVille">ville : </label>
                             <select id="SelectVille" disable="true"></select>
-                            <button id="envoyer">Rechercher</button>
+                            <button id="envoyer" onclick="scrollToSection2()">Rechercher</button>
                         </li>
                     </ul>
                     
@@ -53,7 +52,7 @@
             </div>
         </section>
         <!-- Section des données -->
-        <section class="paire">
+        <section class="paire" id="section2">
             <div class="affichage">
                 <!-- Ville -->
                 <div class="case ville">
