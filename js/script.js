@@ -31,6 +31,7 @@ envoie.addEventListener('click',()=>{
 
 //fonction qui gère la liste des communes 
 function test() {
+    SelectVille.innerHTML = '';
     let url;
     let ListeVille;
     url = apiUrl + cp.value;
