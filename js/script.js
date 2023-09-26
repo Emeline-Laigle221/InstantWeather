@@ -138,3 +138,8 @@ function creer_date(date){
 
     return chaine_date;
 }
+
+function scrollToSection2() {
+    const section2 = document.getElementById('section2');
+    section2.scrollIntoView({ behavior: 'smooth' });
+}
