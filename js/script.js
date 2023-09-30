@@ -6,14 +6,12 @@ const cp = document.getElementById("cp");
 const SelectVille = document.getElementById("SelectVille");
 
 const sectionDisplay = document.getElementById("affichage");
-const valider = document.getElementById("valider");
-const coordonees = document.getElementById("coordonnees");
 
 // Sélectionne l'élément HTML avec l'ID 'envoyer' et ajoute un écouteur d'événements 'click'
 document.getElementById('envoyer').addEventListener('click',()=>{
     // Appelle la fonction de traitementMeteo lorsque le bouton est cliqué
     traitementMeteo();
-})
+});
 
 
 //appelle fonction chercheCP pour liste commune
@@ -83,8 +81,6 @@ function traitementMeteo(){
     }
 }
 
-
-
 function creer_date(date){
     let chaine_date = "";
 
@@ -149,6 +145,8 @@ function scrollToSection2() {
     section2.scrollIntoView({ behavior: 'smooth' });
 }
 
-coordonees.onchange = function(value){
-    console.log(value);
-};
+if(localStorage.getItem('longitude')){
+    console.log("la longitude est : " + localStorage.getItem('longitude'));
+    document.getElementById('caseCoordonnees').classList.remove("donnees-sup-none");
+    document.getElementById('caseCoordonnees').classList.add("donnees-sup-grid");
+}
