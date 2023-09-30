@@ -5,12 +5,14 @@ const apiUrl = 'https://geo.api.gouv.fr/communes?codePostal=';
 const cp = document.getElementById("cp");
 const SelectVille = document.getElementById("SelectVille");
 
-
+const sectionDisplay = document.getElementById("affichage");
+const valider = document.getElementById("valider");
+const coordonees = document.getElementById("coordonnees");
 
 // Sélectionne l'élément HTML avec l'ID 'envoyer' et ajoute un écouteur d'événements 'click'
 document.getElementById('envoyer').addEventListener('click',()=>{
     // Appelle la fonction de traitementMeteo lorsque le bouton est cliqué
-traitementMeteo();
+    traitementMeteo();
 })
 
 
@@ -140,6 +142,13 @@ function creer_date(date){
 }
 
 function scrollToSection2() {
+    sectionDisplay.classList.add("affichage");
+    sectionDisplay.classList.remove("affichageNone");
+
     const section2 = document.getElementById('section2');
     section2.scrollIntoView({ behavior: 'smooth' });
 }
+
+coordonees.onchange = function(value){
+    console.log(value);
+};

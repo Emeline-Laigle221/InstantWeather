@@ -18,7 +18,7 @@
             <h1 class="titre">INSTANT <br> WEATHER</h1>
         </div>
         <nav>
-            <a href="#">ACCEUIL</a>
+            <a href="#">ACCUEIL</a>
             <a href="parametre.html">PARAMETRE</a>
 
         </nav>
@@ -33,18 +33,12 @@
                 <h2>ENTRER VOTRE COMMUNE</h2>
             </div>
             <div class="info formulaire">
-                    <ul>
-                        <li>
-                            <label >Code Postal</label>
-                            <input type="text" id="cp" maxlength="5" placeholder="Renseigner le code postal"/>
-                        </li>
-                        <li>
-                            <label for="SelectVille">ville : </label>
-                            <select id="SelectVille" disable="true"></select>
-                            <button id="envoyer" onclick="scrollToSection2()">Rechercher</button>
-                        </li>
-                    </ul>
-                    
+                <label for="cp">CODE POSTAL :</label>
+                <input type="text" id="cp" maxlength="5" />
+                <label for="SelectVille">COMMUNE : </label>
+                <select id="SelectVille" disable="true"></select>
+                
+                <button id="envoyer" onclick="scrollToSection2()">Rechercher</button>
             </div>
             <div class="deco bas">
                 <div class="bas-gauche"></div>
@@ -53,10 +47,10 @@
         </section>
         <!-- Section des données -->
         <section class="paire" id="section2">
-            <div class="affichage">
+            <div id="affichage" class="affichageNone">
                 <!-- Ville -->
                 <div class="case ville">
-                    <h2 id="ville">GAINVILLE SUR ODON</h2>
+                    <h2 id="ville">GRAINVILLE SUR ODON</h2>
                 </div>
 
                 <!-- Date -->
