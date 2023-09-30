@@ -4,6 +4,9 @@ const envoie = document.getElementById("envoie");
 const apiUrl = 'https://geo.api.gouv.fr/communes?codePostal=';
 const cp = document.getElementById("cp");
 const SelectVille = document.getElementById("SelectVille");
+const nbjour = document.getElementById("nbjour");
+const depardieu = document.getElementById("depardieu");
+const SelectJour = document.getElementById("SelectJour");
 
 
 
@@ -27,7 +30,33 @@ cp.addEventListener('change',()=>{
     }
 });
 
+nbjour.addEventListener('change', ()=>{
+    let nb_j = parseInt(nbjour.value)
 
+    if(nb_j >= 1  && nb_j <= 14){
+        depardieu.style.display = 'block';
+        SelectionJour();
+    }
+});
+
+function SelectionJour(){
+    SelectJour.innerHTML = '';
+    const today = new Date();
+    for(let i = 0; i < nbjour.value; i++){
+        let option = document.createElement("option");
+        option.textContent = "test";
+        option.value = i;
+        const dateOption = new Date(today);
+        dateOption.setDate(today.getDate() + i); // Ajoute i jours à la date d'aujourd'hui
+        option.textContent = formatDate(dateOption); // Formatte la date comme souhaité
+        SelectJour.appendChild(option);
+    }
+}
+
+function formatDate(date) {
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    return date.toLocaleDateString('fr-FR', options);
+}
 
 //fonction qui gère la liste des communes 
 //fonction qui gère la liste des communes 

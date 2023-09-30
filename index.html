@@ -35,13 +35,22 @@
             <div class="info formulaire">
                     <ul>
                         <li>
-                            <label >Code Postal</label>
+                            <label >Code Postal : </label>
                             <input type="text" id="cp" maxlength="5" placeholder="Renseigner le code postal"/>
                         </li>
                         <li>
                             <label for="SelectVille">ville : </label>
                             <select id="SelectVille" disable="true"></select>
                             <button id="envoyer" onclick="scrollToSection2()">Rechercher</button>
+                        </li>
+                        <li>
+                            <label >nombre de jour : </label>
+                            <input type="number" id="nbjour" min="1" max="14"/>
+                        </li>
+                        <li id="depardieu" style="display: none;">
+                            <label >choix jour : </label>
+                            <select id="SelectJour" disable="true"></select>
+                            <button id="envoyer2">Envoyer</button>
                         </li>
                     </ul>
                     
