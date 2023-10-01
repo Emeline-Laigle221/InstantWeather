@@ -145,8 +145,16 @@ function scrollToSection2() {
     section2.scrollIntoView({ behavior: 'smooth' });
 }
 
+console.log(localStorage.getItem('longitude'));
 if(localStorage.getItem('longitude')){
-    console.log("la longitude est : " + localStorage.getItem('longitude'));
+    console.log(localStorage.getItem('longitude'));
+    document.getElementById('caseCoordonnees').classList.remove("donnees-sup-none");
+    document.getElementById('caseCoordonnees').classList.add("donnees-sup-grid");
+}
+
+console.log(localStorage.getItem('latitude'));
+if(localStorage.getItem('latitude')){
+    console.log(localStorage.getItem('latitude'));
     document.getElementById('caseCoordonnees').classList.remove("donnees-sup-none");
     document.getElementById('caseCoordonnees').classList.add("donnees-sup-grid");
 }
