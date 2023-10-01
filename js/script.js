@@ -76,6 +76,7 @@ function traitementMeteo(){
                 document.getElementById('tempsSoleil').textContent=data.forecast.sun_hours +" h"; //met à jour le temps d'ensoleillement de la ville sélectionnée 
                 //document.getElementById('direction').textContent=data.forecast.dirwind10m+" °"; //met à jour le degrès de direction du vent de la ville sélectionnée 
                 //document.getElementById('precipitation').textContent=data.forecast.rr10+" mm";//met à jour le cumul de pluie sur la journée en mm de la ville sélectionnée 
+                changer_image_meteo(data.forecast.weather);
             })
         ).catch((err)=>console.log('Erreur : '+ err));
     }
@@ -142,4 +143,95 @@ function creer_date(date){
 function scrollToSection2() {
     const section2 = document.getElementById('section2');
     section2.scrollIntoView({ behavior: 'smooth' });
+}
+
+function changer_image_meteo(numero){
+    console.log("fonction : ", numero);
+    console.log(numero == 230);
+    const image = document.getElementById("icone");
+    switch(numero){
+        case 0 : 
+            image.src = "image/sun-solid.svg";
+            image.alt = "Soleil";
+            break;
+        case 1:
+        case 2: 
+            image.src = "image/cloud-sun-solid.svg";
+            image.alt = "Soleil derrière un nuage";
+            break;
+        case 3:
+        case 4:
+        case 5: 
+            image.src = "image/cloud-solid.svg";
+            image.alt = "Nuage";
+            break;
+        case 6:
+        case 7: 
+            image.src = "image/smog-solid";
+            image.alt = "Brouillard";
+            break;
+        case 10:
+        case 11:
+        case 40:
+        case 46:
+        case 210 : 
+            image.src = "image/cloud-sun-rain-solid.svg";
+            image.alt = "Solei derrière un nuage pluvieux";
+            break;
+        case 12:
+        case 13:
+        case 14:
+        case 15:
+        case 16:
+        case 41:
+        case 42:
+        case 43:
+        case 44:
+        case 45:
+        case 47:
+        case 48:
+        case 211:
+        case 212: 
+            image.src = "image/cloud-showers-heavy-solid.svg";
+            image.alt = "Pluie";
+            break;
+        case 20:
+        case 21:
+        case 22:
+        case 30:
+        case 31:
+        case 32:
+        case 60:
+        case 61:
+        case 62:
+        case 63:
+        case 64:
+        case 65:
+        case 66:
+        case 67:
+        case 68:
+        case 70:
+        case 71:
+        case 72:
+        case 73:
+        case 74:
+        case 75:
+        case 76:
+        case 78:
+        case 79:
+        case 220:
+        case 221:
+        case 222:
+        case 230:
+        case 231:
+        case 232:
+        case 235 : 
+            image.src = "image/snowflake-regular.svg";
+            image.alt = "Flocon de neige";
+            break;
+        default : 
+            image.src = "image/cloud-bolt-solid.svg";
+            image.alt = "Nuage orageux";
+            break;
+    }
 }
