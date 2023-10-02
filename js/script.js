@@ -176,7 +176,7 @@ else if(localStorage.getItem('direction') == 'false'){
 }
 
 //Affichage de la vitesse du vent
-if(localStorage.getItem('vitessse') == 'true'){
+if(localStorage.getItem('vitesse') == 'true'){
     document.getElementById('caseVent').classList.remove("donnees-sup-none");
     document.getElementById('caseVent').classList.add("donnees-sup-grid");
     document.getElementById('vite').style.display = 'block';

@@ -46,19 +46,19 @@ if(localStorage.getItem('vitesse') == 'true'){
     }
 }
 
-if(localStorage.getItem('probabilite') == 'true'){
-    plui.checked = true;
-    if(localStorage.getItem('precipitation') == 'true'){
-        pluie.checked = true;
-    }
-}
+// if(localStorage.getItem('probabilite') == 'true'){
+//     plui.checked = true;
+//     if(localStorage.getItem('precipitation') == 'true'){
+//         pluie.checked = true;
+//     }
+// }
 
-if(localStorage.getItem('precipitation') == 'true'){
-    precipitation.checked = true;
-    if(localStorage.getItem('probabilite') == 'true'){
-        pluie.checked = true;
-    }
-}
+// if(localStorage.getItem('precipitation') == 'true'){
+//     precipitation.checked = true;
+//     if(localStorage.getItem('probabilite') == 'true'){
+//         pluie.checked = true;
+//     }
+// }
 
 // Selection des paramètre de coordonnées
 coordonees.addEventListener('change', ()=>{
