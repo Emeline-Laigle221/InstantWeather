@@ -174,7 +174,7 @@ function traitementMeteo(){
 }
 
 
-
+//Fonction créant la date affiché à droite dans l'élément html "date"
 function creer_date(date){
     let chaine_date = "";
 
@@ -238,9 +238,9 @@ function scrollToSection2() {
 
 //Fonction changeant l'image de gauche en fonction de la météo
 function changer_image_meteo(numero){
-    console.log("fonction : ", numero);
-    console.log(numero == 230);
     const image = document.getElementById("icone");
+    //Chaque numéro correspond à une météo référencé sur : https://api.meteo-concept.com/documentation#code-temps
+    //La boucle suivante change l'image de gauche en fonction du code météo
     switch(numero){
         case 0 : 
             image.src = "image/sun-solid.svg";
