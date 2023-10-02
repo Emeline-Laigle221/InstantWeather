@@ -38,6 +38,8 @@ cp.addEventListener('change',()=>{
     }
 });
 
+//appelle la fonction SelectionJour lorsque qu'un nombre de jours est indiqué
+
 nbjour.addEventListener('change', ()=>{
     let nb_j = parseInt(nbjour.value)
 
@@ -57,6 +59,8 @@ nbjour.addEventListener('change', ()=>{
     }
 });
 
+//Ajoute les N jours au select afin que l'utilisateur puisse selectionée le jour dont il souhaite la meteo 
+
 function SelectionJour(){
     SelectJour.innerHTML = '';
     const today = new Date();
@@ -71,12 +75,14 @@ function SelectionJour(){
     }
 }
 
+//formate la date
+
 function formatDate(date) {
     const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
     return date.toLocaleDateString('fr-FR', options);
 }
 
-//fonction qui gère la liste des communes 
+
 //fonction qui gère la liste des communes 
 function chercheCP() {
     SelectVille.innerHTML = ''; //vide le SelectVille pour éviter les bugs
