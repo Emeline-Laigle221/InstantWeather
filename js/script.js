@@ -15,13 +15,14 @@ const envoieNbJours = document.getElementById("envoyer2");
 // Sélectionne l'élément HTML avec l'ID 'envoyer' et ajoute un écouteur d'événements 'click'
 document.getElementById('envoyer').addEventListener('click',()=>{
     // Appelle la fonction de traitementMeteo lorsque le bouton est cliqué
-    traitementMeteo();
-})
-
-envoieNbJours.addEventListener('click',()=>{
-    //Appelle de la fonction de traitement meteo en fonction du jours choisi
+    //traitementMeteo();
     traitementMeteoJours();
 })
+
+/*envoieNbJours.addEventListener('click',()=>{
+    //Appelle de la fonction de traitement meteo en fonction du jours choisi
+    traitementMeteoJours();
+})*/
 
 
 //appelle fonction chercheCP pour liste commune
@@ -92,7 +93,7 @@ function chercheCP() {
 
 
 // Définit une fonction de traitement pour la météo
-function traitementMeteo(){
+/*function traitementMeteo(){
     // Récupère la valeur sélectionnée dans la liste déroulante communeSelect
     const commune= communeSelect.value;
     if(commune!=null){
@@ -115,13 +116,22 @@ function traitementMeteo(){
             })
         ).catch((err)=>console.log('Erreur : '+ err));
     }
-}
+}*/
 
 // Définit une fonction de traitement pour la météo
 function traitementMeteoJours(){
     // Récupère la valeur sélectionnée dans la liste déroulante communeSelect
     const commune= communeSelect.value;
-    const jour=SelectJour.value;
+    let jour=0;
+    if(SelectJour.children.length==0){
+        console.log("coucou");
+        jour=0;
+    }
+    else{
+        console.log("au revoir");
+        jour=SelectJour.value;
+    }
+    
     if(commune!=null){
             // Effectue une requête fetch pour obtenir les données météorologiques pour le jour choisi et la ville choisi
         fetch(`https://api.meteo-concept.com/api/forecast/daily?token=78566df65679384cb5aef99952feed7743b1c622f6cf67fb152c48716c77bce9&insee=${commune}`).then(response=> 
