@@ -134,7 +134,7 @@ function chercheCP() {
     }
 }*/
 
-// Définit une fonction de traitement pour la météo
+// Définit une fonction de traitement pour la météo selon le jour demandé par l'utilisateur
 function traitementMeteoJours(){
     // Récupère la valeur sélectionnée dans la liste déroulante communeSelect
     const commune= communeSelect.value;
@@ -171,7 +171,7 @@ function traitementMeteoJours(){
 }
 
 
-
+//Formate la date 
 function creer_date(date){
     let chaine_date = "";
 
@@ -228,6 +228,8 @@ function creer_date(date){
     return chaine_date;
 }
 
+
+//descend automatiquement la page pour montrer la meteo lorsaque que l'on a indiqué le jour et le code postal
 function scrollToSection2() {
     const section2 = document.getElementById('section2');
     section2.scrollIntoView({ behavior: 'smooth' });
