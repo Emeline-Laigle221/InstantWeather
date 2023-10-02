@@ -11,6 +11,7 @@ const envoieNbJours = document.getElementById("envoyer2");
 
 
 
+
 // Sélectionne l'élément HTML avec l'ID 'envoyer' et ajoute un écouteur d'événements 'click'
 document.getElementById('envoyer').addEventListener('click',()=>{
     // Appelle la fonction de traitementMeteo lorsque le bouton est cliqué
