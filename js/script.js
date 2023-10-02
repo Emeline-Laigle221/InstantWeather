@@ -26,16 +26,19 @@ document.getElementById('envoyer').addEventListener('click',()=>{
 
 
 //appelle fonction chercheCP pour liste commune
-
+//Désactive le champ "Ville" et le bouton "Rechercher" lorsqu'il n'y a pas de valeur correcte dans le champ du code postalS
 cp.addEventListener('change',()=>{
     let nb_cp = parseInt(cp.value)
 
     if(nb_cp > 9999){
         SelectVille.disabled = false
+        envoyer.disabled = false
         chercheCP();
         afficheSelectVille.style.display = 'block';
+
     }else{
         SelectVille.disabled = true
+        envoyer.disabled = true
         afficheSelectVille.style.display = 'none';
     }
 });
