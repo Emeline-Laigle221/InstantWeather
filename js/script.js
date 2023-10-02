@@ -9,7 +9,7 @@ const depardieu = document.getElementById("depardieu");
 const SelectJour = document.getElementById("SelectJour");
 const envoieNbJours = document.getElementById("envoyer2");
 const erreurnbjour = document.getElementById("erreurnbjour");
-
+const afficheSelectVille = document.getElementById("afficheSelectVille");
 
 
 // Sélectionne l'élément HTML avec l'ID 'envoyer' et ajoute un écouteur d'événements 'click'
@@ -33,8 +33,10 @@ cp.addEventListener('change',()=>{
     if(nb_cp > 9999){
         SelectVille.disabled = false
         chercheCP();
+        afficheSelectVille.style.display = 'block';
     }else{
         SelectVille.disabled = true
+        afficheSelectVille.style.display = 'none';
     }
 });
 
