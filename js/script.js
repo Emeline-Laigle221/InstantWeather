@@ -47,7 +47,7 @@ nbjour.addEventListener('change', ()=>{
         SelectionJour();
     }
     else if(isNaN(nb_j)){
-        console.log("là");
+        //console.log("là");
         erreurnbjour.style.display = 'none';
         depardieu.style.display = 'none';
     }
@@ -134,11 +134,11 @@ function traitementMeteoJours(){
     const commune= communeSelect.value;
     let jour=0;
     if(SelectJour.children.length==0){
-        console.log("coucou");
+        //console.log("coucou");
         jour=0;
     }
     else{
-        console.log("au revoir");
+        //console.log("au revoir");
         jour=SelectJour.value;
     }
     
