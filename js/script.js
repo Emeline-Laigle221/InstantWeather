@@ -10,6 +10,7 @@ const SelectJour = document.getElementById("SelectJour");
 const envoieNbJours = document.getElementById("envoyer2");
 const erreurnbjour = document.getElementById("erreurnbjour");
 const afficheSelectVille = document.getElementById("afficheSelectVille");
+const sectionDisplay=document.getElementById("affichage");
 
 //Traduction des codes météos
 const meteoCode = { 0: "Soleil",
@@ -109,6 +110,7 @@ document.getElementById('envoyer').addEventListener('click',()=>{
     //traitementMeteo();
     traitementMeteoJours();
 })
+
 
 /*envoieNbJours.addEventListener('click',()=>{
     //Appelle de la fonction de traitement meteo en fonction du jours choisi
@@ -258,10 +260,10 @@ function traitementMeteoJours(){
                 let date= new Date(data.forecast[jour].datetime);
                 document.getElementById('date').textContent=creer_date(date); //met à jour la date d'aujourd'hui de la ville sélectionnée 
                 document.getElementById('ville').textContent=data.city.name; //met à jour le nom de la ville sélectionnée sur la page html 
-                //document.getElementById('vitesse').textContent=data.forecast.wind10m+" km/h"; //met à jour la vitesse du vent de la ville sélectionnée 
+                document.getElementById('vitesse').textContent=data.forecast[jour].wind10m+" km/h"; //met à jour la vitesse du vent de la ville sélectionnée 
                 document.getElementById('tempsSoleil').textContent=data.forecast[jour].sun_hours +" h"; //met à jour le temps d'ensoleillement de la ville sélectionnée 
-                //document.getElementById('direction').textContent=data.forecast.dirwind10m+" °"; //met à jour le degrès de direction du vent de la ville sélectionnée 
-                //document.getElementById('precipitation').textContent=data.forecast.rr10+" mm";//met à jour le cumul de pluie sur la journée en mm de la ville sélectionnée */
+                document.getElementById('direction').textContent=data.forecast[jour].dirwind10m+" °"; //met à jour le degrès de direction du vent de la ville sélectionnée 
+                document.getElementById('precipitation').textContent=data.forecast[jour].rr10+" mm";//met à jour le cumul de pluie sur la journée en mm de la ville sélectionnée */
                 changer_image_meteo(data.forecast[jour].weather);
                 changer_libelle_meteo(data.forecast[jour].weather);
             })
@@ -270,8 +272,8 @@ function traitementMeteoJours(){
 }
 
 
-
 //Fonction créant la date affiché à droite dans l'élément html "date"
+
 function creer_date(date){
     let chaine_date = "";
 
@@ -329,11 +331,15 @@ function creer_date(date){
 }
 
 
+
 //descend automatiquement la page pour montrer la meteo lorsaque que l'on a indiqué le jour et le code postal
-function scrollToSection2() {
+function scrollALaSection2() {
+    sectionDisplay.classList.add("affichage");
+    sectionDisplay.classList.remove("affichageNone");
     const section2 = document.getElementById('section2');
     section2.scrollIntoView({ behavior: 'smooth' });
 }
+
 
 //Fonction changeant l'image de gauche en fonction de la météo
 function changer_image_meteo(numero){
@@ -432,3 +438,64 @@ function changer_image_meteo(numero){
 function changer_libelle_meteo(numero){
     document.getElementById("etat").textContent = meteoCode[numero];
 }
+
+//Affichage de la longitude
+if(localStorage.getItem('longitude') == 'true'){
+    document.getElementById('caseCoordonnees').classList.remove("donnees-sup-none");
+    document.getElementById('caseCoordonnees').classList.add("donnees-sup-grid");
+    document.getElementById('long').style.display = 'block';
+}
+else if(localStorage.getItem('longitude') == 'false'){
+    document.getElementById('long').style.display = 'none';
+}
+
+//Affichage de la latitude
+if(localStorage.getItem('latitude') == 'true'){
+    document.getElementById('caseCoordonnees').classList.remove("donnees-sup-none");
+    document.getElementById('caseCoordonnees').classList.add("donnees-sup-grid");
+    document.getElementById('lat').style.display = 'block';
+}
+else if(localStorage.getItem('latitude') == 'false'){
+    document.getElementById('lat').style.display = 'none';
+}
+
+//Affichage de la direction du vent
+if(localStorage.getItem('direction') == 'true'){
+    document.getElementById('caseVent').classList.remove("donnees-sup-none");
+    document.getElementById('caseVent').classList.add("donnees-sup-grid");
+    document.getElementById('dire').style.display = 'block';
+}
+else if(localStorage.getItem('direction') == 'false'){
+    document.getElementById('dire').style.display = 'none';
+}
+
+//Affichage de la vitesse du vent
+if(localStorage.getItem('vitesse') == 'true'){
+    document.getElementById('caseVent').classList.remove("donnees-sup-none");
+    document.getElementById('caseVent').classList.add("donnees-sup-grid");
+    document.getElementById('vite').style.display = 'block';
+}
+else if(localStorage.getItem('vitesse') == 'false'){
+    document.getElementById('vite').style.display = 'none';
+}
+
+//Affichage de la probabilité de pluie
+if(localStorage.getItem('probabilite') == 'true'){
+    document.getElementById('casePluie').classList.remove("donnees-sup-none");
+    document.getElementById('casePluie').classList.add("donnees-sup-grid");
+    document.getElementById('proba').style.display = 'block';
+}
+else if(localStorage.getItem('probabilite') == 'false'){
+    document.getElementById('proba').style.display = 'none';
+}
+
+//Affichage de la précipitation
+if(localStorage.getItem('precipitation') == 'true'){
+    document.getElementById('casePluie').classList.remove("donnees-sup-none");
+    document.getElementById('casePluie').classList.add("donnees-sup-grid");
+    document.getElementById('prec').style.display = 'block';
+}
+else if(localStorage.getItem('precipitation') == 'false'){
+    document.getElementById('prec').style.display = 'none';
+}
+
