@@ -137,7 +137,7 @@ function creer_date(date){
     return chaine_date;
 }
 
-function scrollToSection2() {
+function scrollALaSection2() {
     sectionDisplay.classList.add("affichage");
     sectionDisplay.classList.remove("affichageNone");
 
@@ -145,16 +145,62 @@ function scrollToSection2() {
     section2.scrollIntoView({ behavior: 'smooth' });
 }
 
-console.log(localStorage.getItem('longitude'));
-if(localStorage.getItem('longitude')){
-    console.log(localStorage.getItem('longitude'));
+//Affichage de la longitude
+if(localStorage.getItem('longitude') == 'true'){
     document.getElementById('caseCoordonnees').classList.remove("donnees-sup-none");
     document.getElementById('caseCoordonnees').classList.add("donnees-sup-grid");
+    document.getElementById('long').style.display = 'block';
+}
+else if(localStorage.getItem('longitude') == 'false'){
+    document.getElementById('long').style.display = 'none';
 }
 
-console.log(localStorage.getItem('latitude'));
-if(localStorage.getItem('latitude')){
-    console.log(localStorage.getItem('latitude'));
+//Affichage de la latitude
+if(localStorage.getItem('latitude') == 'true'){
     document.getElementById('caseCoordonnees').classList.remove("donnees-sup-none");
     document.getElementById('caseCoordonnees').classList.add("donnees-sup-grid");
+    document.getElementById('lat').style.display = 'block';
+}
+else if(localStorage.getItem('latitude') == 'false'){
+    document.getElementById('lat').style.display = 'none';
+}
+
+//Affichage de la direction du vent
+if(localStorage.getItem('direction') == 'true'){
+    document.getElementById('caseVent').classList.remove("donnees-sup-none");
+    document.getElementById('caseVent').classList.add("donnees-sup-grid");
+    document.getElementById('dire').style.display = 'block';
+}
+else if(localStorage.getItem('direction') == 'false'){
+    document.getElementById('dire').style.display = 'none';
+}
+
+//Affichage de la vitesse du vent
+if(localStorage.getItem('vitessse') == 'true'){
+    document.getElementById('caseVent').classList.remove("donnees-sup-none");
+    document.getElementById('caseVent').classList.add("donnees-sup-grid");
+    document.getElementById('vite').style.display = 'block';
+}
+else if(localStorage.getItem('vitesse') == 'false'){
+    document.getElementById('vite').style.display = 'none';
+}
+
+//Affichage de la probabilité de pluie
+if(localStorage.getItem('probabilite') == 'true'){
+    document.getElementById('casePluie').classList.remove("donnees-sup-none");
+    document.getElementById('casePluie').classList.add("donnees-sup-grid");
+    document.getElementById('proba').style.display = 'block';
+}
+else if(localStorage.getItem('probabilite') == 'false'){
+    document.getElementById('proba').style.display = 'none';
+}
+
+//Affichage de la précipitation
+if(localStorage.getItem('precipitation') == 'true'){
+    document.getElementById('casePluie').classList.remove("donnees-sup-none");
+    document.getElementById('casePluie').classList.add("donnees-sup-grid");
+    document.getElementById('prec').style.display = 'block';
+}
+else if(localStorage.getItem('precipitation') == 'false'){
+    document.getElementById('prec').style.display = 'none';
 }

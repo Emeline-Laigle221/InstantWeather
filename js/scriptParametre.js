@@ -18,6 +18,48 @@ const precipitation = document.getElementById("precipitation");
 // precipitation.checked = localStorage.getItem('precipitation');
 // console.log(localStorage.getItem('longitude'));
 
+if(localStorage.getItem('longitude') == 'true'){
+    longitude.checked = true;
+    if(localStorage.getItem('latitude') == 'true'){
+        coordonees.checked = true;
+    }
+}
+
+if(localStorage.getItem('latitude') == 'true'){
+    latitude.checked = true;
+    if(localStorage.getItem('longitude') == 'true'){
+        coordonees.checked = true;
+    }
+}
+
+if(localStorage.getItem('direction') == 'true'){
+    direction.checked = true;
+    if(localStorage.getItem('vitesse') == 'true'){
+        vent.checked = true;
+    }
+}
+
+if(localStorage.getItem('vitesse') == 'true'){
+    vitesse.checked = true;
+    if(localStorage.getItem('direction') == 'true'){
+        vent.checked = true;
+    }
+}
+
+if(localStorage.getItem('probabilite') == 'true'){
+    plui.checked = true;
+    if(localStorage.getItem('precipitation') == 'true'){
+        pluie.checked = true;
+    }
+}
+
+if(localStorage.getItem('precipitation') == 'true'){
+    precipitation.checked = true;
+    if(localStorage.getItem('probabilite') == 'true'){
+        pluie.checked = true;
+    }
+}
+
 // Selection des paramètre de coordonnées
 coordonees.addEventListener('change', ()=>{
     if(coordonees.checked){

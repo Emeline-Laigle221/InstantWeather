@@ -38,7 +38,7 @@
                 <label for="SelectVille">COMMUNE : </label>
                 <select id="SelectVille" disable="true"></select>
                 
-                <button id="envoyer" onclick="scrollToSection2()">Rechercher</button>
+                <button id="envoyer" onclick="scrollALaSection2()">Rechercher</button>
             </div>
             <div class="deco bas">
                 <div class="bas-gauche"></div>
@@ -87,11 +87,11 @@
                 <div id="caseCoordonnees" class="case donnees-sup-none">
                     <h2>COORDONNÉES</h2>
                     <div>
-                        <div class="valeur long">
+                        <div  id="long" class="valeur">
                             <h2>LONGITUDE : </h2>
                             <h2 id="longitude">-1.6833</h2>
                         </div>
-                        <div class="valeur lat">
+                        <div id="lat" class="valeur">
                             <h2>LATITUDE : </h2>
                             <h2 id="latitude">48.0833</h2>
                         </div>
@@ -102,11 +102,11 @@
 
                     <h2>VENT</h2>
                     <div>
-                        <div class="valeur dire">
+                        <div id="dire" class="valeur">
                             <h2>DIRECTION : </h2>
                             <h2 id="direction">45° NE</h2>
                         </div>
-                        <div class="valeur vite">
+                        <div id="vite" class="valeur">
                             <h2>VITESSE : </h2>
                             <h2 id="vitesse">15 KM/H</h2>
                         </div>
@@ -117,11 +117,11 @@
 
                     <h2>PLUIE</h2>
                     <div>
-                        <div class="valeur proba">
+                        <div id="proba" class="valeur">
                             <h2>PROBABILITÉ : </h2>
                             <h2 id="probabilite">27%</h2>
                         </div>
-                        <div class="valeur prec">
+                        <div id="prec" class="valeur">
                             <h2>PRÉCIPITATION : </h2>
                             <h2 id="precipitation">10 mm</h2>
                         </div>
