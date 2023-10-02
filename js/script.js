@@ -14,7 +14,7 @@ const erreurnbjour = document.getElementById("erreurnbjour");
 
 // Sélectionne l'élément HTML avec l'ID 'envoyer' et ajoute un écouteur d'événements 'click'
 document.getElementById('envoyer').addEventListener('click',()=>{
-    // Appelle la fonction de traitementMeteo lorsque le bouton est cliqué
+    // Appelle la fonction de traitementMeteoJours lorsque le bouton est cliqué
     //traitementMeteo();
     traitementMeteoJours();
 })
