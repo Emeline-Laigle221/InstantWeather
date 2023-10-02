@@ -26,7 +26,7 @@ document.getElementById('envoyer').addEventListener('click',()=>{
 
 
 //appelle fonction chercheCP pour liste commune
-//Désactive le champ "Ville" et le bouton "Rechercher" lorsqu'il n'y a pas de valeur correcte dans le champ du code postalS
+//Désactive le champ "Ville" et le bouton "Rechercher" lorsqu'il n'y a pas de valeur correcte dans le champ du code postal
 cp.addEventListener('change',()=>{
     let nb_cp = parseInt(cp.value)
 
