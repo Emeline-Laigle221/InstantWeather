@@ -18,7 +18,7 @@
             <h1 class="titre">INSTANT <br> WEATHER</h1>
         </div>
         <nav>
-            <a href="#">ACCEUIL</a>
+            <a href="#">ACCUEIL</a>
             <a href="parametre.html">PARAMETRE</a>
 
         </nav>
@@ -33,18 +33,26 @@
                 <h2>ENTRER VOTRE COMMUNE</h2>
             </div>
             <div class="info formulaire">
-                    <ul>
-                        <li>
-                            <label >Code Postal</label>
+                            <label >Code Postal : </label>
                             <input type="text" id="cp" maxlength="5" placeholder="Renseigner le code postal"/>
-                        </li>
-                        <li>
+
+                        <div id="afficheSelectVille" style="display: none;">
                             <label for="SelectVille">ville : </label>
                             <select id="SelectVille" disable="true"></select>
-                            <button id="envoyer" onclick="scrollToSection2()">Rechercher</button>
-                        </li>
-                    </ul>
-                    
+                            
+                        </div>
+                        <div>
+                            <label >nombre de jour * : </label>
+                            <input type="number" id="nbjour" min="1" max="14"/>
+                            <button id="envoyer" onclick="scrollALaSection2()" disabled="true">Rechercher</button>
+                        </div>
+                        <p id="erreurnbjour" style="display: none;">Veuillez saisir une valeur entre 1 et 14.</p>
+                        <div id="depardieu" style="display: none;">
+                            <label >choix jour : </label>
+                            <select id="SelectJour" disable="true"></select>
+                            
+                            <!--<button id="envoyer2" onclick="scrollToSection2()">Envoyer</button>-->
+                        </div>
             </div>
             <div class="deco bas">
                 <div class="bas-gauche"></div>
@@ -53,7 +61,7 @@
         </section>
         <!-- Section des données -->
         <section class="paire" id="section2">
-            <div class="affichage">
+            <div id="affichage" class="affichageNone">
                 <!-- Ville -->
                 <div class="case ville">
                     <h2 id="ville">RENNES</h2>
@@ -90,44 +98,44 @@
                 </div>
 
                 <!-- Coordonnées -->
-                <div class="case donnes-sup-none">
+                <div id="caseCoordonnees" class="case donnees-sup-none">
                     <h2>COORDONNÉES</h2>
                     <div>
-                        <div class="valeur">
+                        <div  id="long" class="valeur">
                             <h2>LONGITUDE : </h2>
                             <h2 id="longitude">-1.6833</h2>
                         </div>
-                        <div class="valeur">
+                        <div id="lat" class="valeur">
                             <h2>LATITUDE : </h2>
                             <h2 id="latitude">48.0833</h2>
                         </div>
                     </div>
                 </div>
                 <!-- Vent -->
-                <div class="case donnes-sup-none">
+                <div id="caseVent" class="case donnees-sup-none">
 
                     <h2>VENT</h2>
                     <div>
-                        <div class="valeur">
+                        <div id="dire" class="valeur">
                             <h2>DIRECTION : </h2>
                             <h2 id="direction">45° NE</h2>
                         </div>
-                        <div class="valeur">
+                        <div id="vite" class="valeur">
                             <h2>VITESSE : </h2>
                             <h2 id="vitesse">15 KM/H</h2>
                         </div>
                     </div>
                 </div>
                 <!-- Pluie -->
-                <div class="case donnes-sup-solo">
+                <div id="casePluie" class="case donnees-sup-none">
 
                     <h2>PLUIE</h2>
                     <div>
-                        <div class="valeur">
+                        <div id="proba" class="valeur">
                             <h2>PROBABILITÉ : </h2>
                             <h2 id="probabilite">27%</h2>
                         </div>
-                        <div class="valeur precipitation">
+                        <div id="prec" class="valeur">
                             <h2>PRÉCIPITATION : </h2>
                             <h2 id="precipitation">10 mm</h2>
                         </div>

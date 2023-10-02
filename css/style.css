@@ -9,15 +9,11 @@
 
 .impaire{
     background-color:#1f2039;
+    background-color:#1f2039;
 }
 
 section{
     height: 100%;
-}
-
-.impaire{
-    background-color:#1f2039;
-    height: calc(100%);
 }
 
 header{
@@ -50,8 +46,7 @@ nav>a{
 }
 
 .deco{
-    padding: 8% 0 3% 0;
-
+    padding: 5% 0 5% 0;
     display: flex;
     justify-content: space-around;
     flex-wrap: nowrap;
@@ -79,7 +74,7 @@ nav>a{
     height: 98px;
     background-color: #D9D9D9;
     mix-blend-mode: luminosity;
-    border-radius: 50px 50px 50px 50px / 50px 50px 50px 50px;
+    border-radius: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -89,12 +84,19 @@ nav>a{
     width: 493px;
     height: 136px;
     margin-top: 50px;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 150px 300px;
 }
 
-.bas{
-
-    padding: 50px 0 200px 0;
-
+.bouton{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    width: 70%;
+    display: block;
+    margin: auto;
+    border-radius: 50px;
+    border: #393c69 solid 1px;
 }
 
 .bas-gauche{
@@ -124,23 +126,27 @@ nav>a{
 }
 
 .affichage{
-    padding: 6% 0 6% 0;
+    padding: 0% 0 0% 0;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
-
 }
 
+.affichageNone{
+    display: none;
+}
 
 .ville{
     width: 40%;
     height: 111.242px;
+    margin-top: 5%;
 }
 
 .date{
     width: 40%;
     height: 111.242px;
+    margin-top: 5%;
 }
 
 .icone{
@@ -198,36 +204,27 @@ nav>a{
 }
 
 
-.donnes-sup-none{
+.donnees-sup-none{
     display: none;
 }
 
-.donnes-sup-solo{
-    margin: 10px 2% 10px 2%;
-    width: 90%;
-    height: 158.973px;
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: 50px 108.962px;
-    justify-items: center;
-}
-
-/* .donnes-sup-grid{
-    margin: 10px 2% 10px 2%;
+.donnees-sup-grid{
+    margin: 10px 2% 5% 2%;
     width: 25%;
     height: 278.973px;
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: 50px 228.962px;
     justify-items: center;
-} */
+}
 
-.precipitation{
+#prec{
     display: none;
 }
 
 .param{
-    padding: 105px 0;
+    padding: 30px 0;
+    /* height: 761px; */
 }
 
 .param>*{
@@ -236,12 +233,29 @@ nav>a{
 
 .rectangle{
     margin: auto;
-    width: 815px;
-    height: 513px;
+    margin-top: 70px;
+    width: 65%;
+    height: 611px;
     background: #393c69;
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-radius: 50px;
+
+}
+
+.rectangle>h1{
+    display: inline-block;
+    margin-top: 50px;
+}
+
+ul{
+    list-style-type: none;
+    margin: 10px 0 20px 0;
+}
+
+ul ul li{
+    margin: 5px 0 5px 20px;
 }
 
 footer{
@@ -255,7 +269,8 @@ footer{
     margin-top: 50px;
 }
 
-@media screen and (max-width: 1000px){
+/* Modification pour tablette */
+@media screen and (max-width: 1024px){
     *{
         font-size: large;
     }
@@ -268,17 +283,7 @@ footer{
         width: 40%;
     }
 
-    .donnes-sup{
-        margin: 10px 0 10px 0;
-        width: 250%;
-        height: 30%;
-        display: grid;
-        grid-template-columns: 100%;
-        grid-template-rows: 50px 150px;
-        justify-items: center;
-    }
-
-    .donnes-sup-solo{
+    .donnees-sup-solo{
         margin: 10px 2% 10px 2%;
         width: 90%;
         height: 158.973px;
@@ -289,7 +294,16 @@ footer{
     }
 }
 
-@media screen and (max-width: 720px){
+/* Modification pour mobile */
+@media screen and (max-width: 480px){
+
+    .impaire{
+        height: 750px;
+    }
+
+    .info{
+        margin-top: 100px;
+    }
 
     .titre{
         margin-left: 20px;
@@ -315,14 +329,14 @@ footer{
     }
 
     h2{
-        font-size: larger;
+        font-size: large;
     }
 
     .deco>*{
         display: none;
     }
     
-    .affichage{
+    #affichage{
         flex-direction: column;
         flex-wrap: nowrap;
         align-items: center;
@@ -330,11 +344,47 @@ footer{
 
     .case{
         margin: 20px 1% 5px 1%;
+        padding: 15px 0;
         width: 80%;
+        height: auto;
+    }
+
+    .etat{
+        height: 228px;
+        grid-template-rows: 50px 158.962px;
     }
 
     .etat>div{
         margin-right: 10px;
     }
 
+    .formulaire{
+        width: 293px;
+        height: 136px;
+        margin-top: 50px;
+        padding: 10px;
+        display: grid;
+        grid-template-columns: 105px 150px;
+    }
+
+    .donnees-sup-grid{
+        height: 150px;
+        grid-template-rows: 50px 100px;
+    }
+
+    /* partie parametre */
+    .rectangle{
+        margin-top: 17px;
+        border-radius: 50px;
+    }
+
+    .rectangle>h1{
+        display: inline-block;
+        margin-top: 50px;
+    }
+
+    .param{
+        padding: 30px 0;
+        height: 640px;
+    }
 }
