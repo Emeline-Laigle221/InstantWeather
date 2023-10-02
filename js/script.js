@@ -8,7 +8,7 @@ const nbjour = document.getElementById("nbjour");
 const depardieu = document.getElementById("depardieu");
 const SelectJour = document.getElementById("SelectJour");
 const envoieNbJours = document.getElementById("envoyer2");
-
+const erreurnbjour = document.getElementById("erreurnbjour");
 
 
 
@@ -43,7 +43,17 @@ nbjour.addEventListener('change', ()=>{
 
     if(nb_j >= 1  && nb_j <= 14){
         depardieu.style.display = 'block';
+        erreurnbjour.style.display = 'none';
         SelectionJour();
+    }
+    else if(isNaN(nb_j)){
+        console.log("là");
+        erreurnbjour.style.display = 'none';
+        depardieu.style.display = 'none';
+    }
+    else{
+        erreurnbjour.style.display = 'block';
+        depardieu.style.display = 'none';
     }
 });
 
