@@ -10,55 +10,45 @@ const pluie = document.getElementById("pluie");
 const probabilite = document.getElementById("probabilite");
 const precipitation = document.getElementById("precipitation");
 
-// longitude.checked = localStorage.getItem('longitude');
-// latitude.checked = localStorage.getItem('latitude');
-// direction.checked = localStorage.getItem('direction');
-// vitesse.checked = localStorage.getItem('vitesse');
-// probabilite.checked = localStorage.getItem('probabilite');
-// precipitation.checked = localStorage.getItem('precipitation');
-// console.log(localStorage.getItem('longitude'));
 
+//Cocher les paramètres déja coché
 if(localStorage.getItem('longitude') == 'true'){
     longitude.checked = true;
     if(localStorage.getItem('latitude') == 'true'){
         coordonees.checked = true;
     }
 }
-
 if(localStorage.getItem('latitude') == 'true'){
     latitude.checked = true;
     if(localStorage.getItem('longitude') == 'true'){
         coordonees.checked = true;
     }
 }
-
 if(localStorage.getItem('direction') == 'true'){
     direction.checked = true;
     if(localStorage.getItem('vitesse') == 'true'){
         vent.checked = true;
     }
 }
-
 if(localStorage.getItem('vitesse') == 'true'){
     vitesse.checked = true;
     if(localStorage.getItem('direction') == 'true'){
         vent.checked = true;
     }
 }
+if(localStorage.getItem('probabilite') == 'true'){
+    probabilite.checked = true;
+    if(localStorage.getItem('precipitation') == 'true'){
+        pluie.checked = true;
+    }
+}
+if(localStorage.getItem('precipitation') == 'true'){
+    precipitation.checked = true;
+    if(localStorage.getItem('probabilite') == 'true'){
+        pluie.checked = true;
+    }
+}
 
-// if(localStorage.getItem('probabilite') == 'true'){
-//     plui.checked = true;
-//     if(localStorage.getItem('precipitation') == 'true'){
-//         pluie.checked = true;
-//     }
-// }
-
-// if(localStorage.getItem('precipitation') == 'true'){
-//     precipitation.checked = true;
-//     if(localStorage.getItem('probabilite') == 'true'){
-//         pluie.checked = true;
-//     }
-// }
 
 // Selection des paramètre de coordonnées
 coordonees.addEventListener('change', ()=>{
@@ -96,6 +86,7 @@ pluie.addEventListener('change', ()=>{
     }
 });
 
+//Valider les paramètre cocher et les enregistre dans le local Storage 
 valider.addEventListener('click', ()=>{
     localStorage.setItem('longitude', longitude.checked);
     localStorage.setItem('latitude', latitude.checked);
