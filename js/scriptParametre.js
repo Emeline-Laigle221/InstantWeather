@@ -62,6 +62,22 @@ coordonees.addEventListener('change', ()=>{
     }
 });
 
+// Selection du paramètre coordonnée si les sous paramètre sont coché
+function verifCoordonnee(){
+    if(longitude.checked && latitude.checked){
+        coordonees.checked = true;
+    }else{
+        coordonees.checked = false;
+    }
+}
+
+longitude.addEventListener('change',()=>{
+    verifCoordonnee();
+});
+latitude.addEventListener('change',()=>{
+    verifCoordonnee();
+});
+
 // Selection des paramètre de vent
 vent.addEventListener('change', ()=>{
     if(vent.checked){
@@ -74,7 +90,23 @@ vent.addEventListener('change', ()=>{
     }
 });
 
-// // Selection des paramètre de pluie
+// Selection du paramètre vent si les sous paramètre sont coché
+function verifVent(){
+    if(vitesse.checked && direction.checked){
+        vent.checked = true;
+    }else{
+        vent.checked = false;
+    }
+}
+
+vitesse.addEventListener('change',()=>{
+    verifVent();
+});
+direction.addEventListener('change',()=>{
+    verifVent();
+});
+
+// Selection des paramètre de pluie
 pluie.addEventListener('change', ()=>{
     if(pluie.checked){
         probabilite.checked = pluie.checked;
@@ -84,6 +116,21 @@ pluie.addEventListener('change', ()=>{
         probabilite.checked = pluie.checked;
         precipitation.checked = pluie.checked;
     }
+});
+
+// Selection du paramètre pluie si les sous paramètre sont coché
+function verifPluie(){
+    if(probabilite.checked && precipitation.checked){
+        pluie.checked = true;
+    }else{
+        pluie.checked = false;
+    }
+}
+probabilite.addEventListener('change',()=>{
+    verifPluie();
+});
+precipitation.addEventListener('change',()=>{
+    verifPluie();
 });
 
 //Valider les paramètre cocher et les enregistre dans le local Storage 

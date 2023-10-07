@@ -81,7 +81,7 @@ nav>a{
 }
 
 .formulaire{
-    width: 493px;
+    width: 430px;
     height: 206px;
     margin-top: 50px;
     padding: 10px;
@@ -281,11 +281,19 @@ footer{
 
     .titre{
         font-size: xx-large;
-        margin-left: 50px;
+        margin-left: 100px;
+    }
+
+    .info>h2{
+        font-size: x-large;
     }
 
     h2{
         padding: 0 10px 0 10px; 
+    }
+
+    #cp, #SelectVille {
+        width: 40%;
     }
 
     .case{
@@ -300,6 +308,10 @@ footer{
         grid-template-columns: 100%;
         grid-template-rows: 50px 108.962px;
         justify-items: center;
+    }
+
+    .formulaire{
+        height: 250px;
     }
 }
 
