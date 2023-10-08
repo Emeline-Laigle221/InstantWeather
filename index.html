@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Instant Weather</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,29 +30,31 @@
                 <div class="haut-droite"></div>
             </div>
             <div class="info">
-                <h2>ENTRER VOTRE COMMUNE</h2> 
+                <h2>REMPLISSEZ LE FORMULAIRE</h2> 
             </div>
             <div class="info formulaire">
-                            <label >Code Postal : </label>
-                            <input type="text" id="cp" maxlength="5" placeholder="Renseigner le code postal"/>
+                <div>
+                    <label >CODE POSTALE : </label>
+                    <input type="text" id="cp" maxlength="5" placeholder="Renseigner le code postal"/>
+                </div>
+                <div id="afficheSelectVille" style="display: none;">
+                    <label for="SelectVille">VILLE : </label>
+                    <select id="SelectVille" disable="true"></select>
+                    
+                </div>
+                <div>
+                    <label >NOMRE DE JOUR : </label>
+                    <input type="number" id="nbjour" min="1" max="14"/>
+                </div>
+                <p id="erreurnbjour" style="display: none;">Veuillez saisir une valeur entre 1 et 14.</p>
+                <div id="depardieu" style="display: none;">
+                    <label >CHOIX JOUR : </label>
+                    <select id="SelectJour" disable="true"></select>
+                    
+                    <!--<button id="envoyer2" onclick="scrollToSection2()">Envoyer</button>-->
+                </div>
+                <button class="bouton" id="envoyer" onclick="scrollALaSection2()" disabled="true">Rechercher</button>
 
-                        <div id="afficheSelectVille" style="display: none;">
-                            <label for="SelectVille">ville : </label>
-                            <select id="SelectVille" disable="true"></select>
-                            
-                        </div>
-                        <div>
-                            <label >nombre de jour * : </label>
-                            <input type="number" id="nbjour" min="1" max="14"/>
-                            <button id="envoyer" onclick="scrollALaSection2()" disabled="true">Rechercher</button>
-                        </div>
-                        <p id="erreurnbjour" style="display: none;">Veuillez saisir une valeur entre 1 et 14.</p>
-                        <div id="depardieu" style="display: none;">
-                            <label >choix jour : </label>
-                            <select id="SelectJour" disable="true"></select>
-                            
-                            <!--<button id="envoyer2" onclick="scrollToSection2()">Envoyer</button>-->
-                        </div>
             </div>
             <div class="deco bas">
                 <div class="bas-gauche"></div>

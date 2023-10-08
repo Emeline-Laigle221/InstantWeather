@@ -1,9 +1,7 @@
 // Sélectionne l'élément HTML avec l'ID 'communeSelect'
 const communeSelect = document.getElementById('SelectVille');
-//const envoie = document.getElementById("envoie");
 const apiUrl = 'https://geo.api.gouv.fr/communes?codePostal=';
 const cp = document.getElementById("cp");
-const SelectVille = document.getElementById("SelectVille");
 const nbjour = document.getElementById("nbjour");
 const depardieu = document.getElementById("depardieu");
 const SelectJour = document.getElementById("SelectJour");
@@ -112,25 +110,19 @@ document.getElementById('envoyer').addEventListener('click',()=>{
 })
 
 
-/*envoieNbJours.addEventListener('click',()=>{
-    //Appelle de la fonction de traitement meteo en fonction du jours choisi
-    traitementMeteoJours();
-})*/
-
-
 //appelle fonction chercheCP pour liste commune
 //Désactive le champ "Ville" et le bouton "Rechercher" lorsqu'il n'y a pas de valeur correcte dans le champ du code postal
 cp.addEventListener('change',()=>{
     let nb_cp = parseInt(cp.value)
 
     if(nb_cp > 9999){
-        SelectVille.disabled = false
+        communeSelect.disabled = false
         envoyer.disabled = false
         chercheCP();
         afficheSelectVille.style.display = 'block';
 
     }else{
-        SelectVille.disabled = true
+        communeSelect.disabled = true
         envoyer.disabled = true
         afficheSelectVille.style.display = 'none';
     }
@@ -147,7 +139,6 @@ nbjour.addEventListener('change', ()=>{
         SelectionJour();
     }
     else if(isNaN(nb_j)){
-        //console.log("là");
         erreurnbjour.style.display = 'none';
         depardieu.style.display = 'none';
     }
@@ -183,7 +174,7 @@ function formatDate(date) {
 
 //fonction qui gère la liste des communes 
 function chercheCP() {
-    SelectVille.innerHTML = ''; //vide le SelectVille pour éviter les bugs
+    communeSelect.innerHTML = ''; //vide le communeSelect pour éviter les bugs
     let url; //définie la variable url
     url = apiUrl + cp.value; //fusionne dans url Le contenue d'apiURL avec un code postal
     fetch(url) //utilise l'url obtenue pour le fetch, et mettre le tableau qu'il contient dans data
@@ -196,7 +187,7 @@ function chercheCP() {
                     let option = document.createElement("option");
                     option.textContent = v.nom;
                     option.value = v.code;
-                    SelectVille.appendChild(option)
+                    communeSelect.appendChild(option)
                 });
             }
         })
@@ -206,44 +197,15 @@ function chercheCP() {
 }
 
 
-// Définit une fonction de traitement pour la météo
-/*function traitementMeteo(){
-    // Récupère la valeur sélectionnée dans la liste déroulante communeSelect
-    const commune= communeSelect.value;
-    if(commune!=null){
-            // Effectue une requête fetch pour obtenir les données météorologiques
-        fetch(`https://api.meteo-concept.com/api/forecast/daily/0?token=78566df65679384cb5aef99952feed7743b1c622f6cf67fb152c48716c77bce9&insee=${commune}`).then(response=> 
-            response.json().then(data => {
-                console.log(data);
-                document.getElementById('tMin').textContent=data.forecast.tmin + "°C"; //met à jour la température minimal de la ville sélectionnée 
-                document.getElementById('tMax').textContent=data.forecast.tmax + "°C"; //met à jour la température maximal de la ville sélectionnée 
-                document.getElementById('probabilite').textContent=data.forecast.probarain+ "%"; //met à jour la probabilité de pluie en % de la ville sélectionnée 
-                document.getElementById('latitude').textContent=data.city.latitude; //met à jour la latitude de la ville sélectionnée 
-                document.getElementById('longitude').textContent=data.city.longitude; //met à jour la longitude de la ville sélectionnée 
-                let date= new Date(Date.now());
-                document.getElementById('date').textContent=creer_date(date); //met à jour la date d'aujourd'hui de la ville sélectionnée 
-                document.getElementById('ville').textContent=data.city.name; //met à jour le nom de la ville sélectionnée sur la page html 
-                //document.getElementById('vitesse').textContent=data.forecast.wind10m+" km/h"; //met à jour la vitesse du vent de la ville sélectionnée 
-                document.getElementById('tempsSoleil').textContent=data.forecast.sun_hours +" h"; //met à jour le temps d'ensoleillement de la ville sélectionnée 
-                //document.getElementById('direction').textContent=data.forecast.dirwind10m+" °"; //met à jour le degrès de direction du vent de la ville sélectionnée 
-                //document.getElementById('precipitation').textContent=data.forecast.rr10+" mm";//met à jour le cumul de pluie sur la journée en mm de la ville sélectionnée 
-                
-            })
-        ).catch((err)=>console.log('Erreur : '+ err));
-    }
-}*/
-
 // Définit une fonction de traitement pour la météo selon le jour demandé par l'utilisateur
 function traitementMeteoJours(){
     // Récupère la valeur sélectionnée dans la liste déroulante communeSelect
     const commune= communeSelect.value;
     let jour=0;
     if(SelectJour.children.length==0){
-        //console.log("coucou");
         jour=0;
     }
     else{
-        //console.log("au revoir");
         jour=SelectJour.value;
     }
     
@@ -251,7 +213,6 @@ function traitementMeteoJours(){
             // Effectue une requête fetch pour obtenir les données météorologiques pour le jour choisi et la ville choisi
         fetch(`https://api.meteo-concept.com/api/forecast/daily?token=78566df65679384cb5aef99952feed7743b1c622f6cf67fb152c48716c77bce9&insee=${commune}`).then(response=> 
             response.json().then(data => {
-                console.log(data);
                 document.getElementById('tMin').textContent=data.forecast[jour].tmin + "°C"; //met à jour la température minimal de la ville sélectionnée 
                 document.getElementById('tMax').textContent=data.forecast[jour].tmax + "°C"; //met à jour la température maximal de la ville sélectionnée 
                 document.getElementById('probabilite').textContent=data.forecast[jour].probarain + "%"; //met à jour la probabilité de pluie en % de la ville sélectionnée 
@@ -344,7 +305,6 @@ function scrollALaSection2() {
 //Fonction changeant l'image de gauche en fonction de la météo
 function changer_image_meteo(numero){
     const image = document.getElementById("icone");
-    console.log("fonction" + numero);
     //Chaque numéro correspond à une météo référencé sur : https://api.meteo-concept.com/documentation#code-temps
     //La boucle suivante change l'image de gauche en fonction du code météo
     switch(numero){
