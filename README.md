@@ -13,4 +13,4 @@ Ce projet est réalisé par Emeline Laigle, Maxime Jobard, Cyrille Riguet et Vla
 À partir du sujet donné par Christophe Vallot.
 
 ## Remerciement
-Merci à Christophe Vallot pour son cours et son aide.
+Merci à Christophe Vallot pour son cours et son aide ainsi qu'à Romain Ricozzi.
