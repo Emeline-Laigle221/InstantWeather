@@ -120,23 +120,6 @@ cp.addEventListener('change',()=>{
         envoyer.disabled = false
         chercheCP();
         afficheSelectVille.style.display = 'block';
-
-    }else{
-        communeSelect.disabled = true
-        envoyer.disabled = true
-        afficheSelectVille.style.display = 'none';
-    }
-});
-
-// Cache le bock chnbjour si aucun code postal n'est choisi
-cp.addEventListener('change',()=>{
-    let nb_cp = parseInt(cp.value)
-
-    if(nb_cp > 9999){
-        communeSelect.disabled = false
-        envoyer.disabled = false
-        chercheCP();
-        afficheSelectVille.style.display = 'block';
         chnbjour.style.display = 'block';
 
     }else{
@@ -145,6 +128,11 @@ cp.addEventListener('change',()=>{
         afficheSelectVille.style.display = 'none';
         chnbjour.style.display = 'none';
     }
+});
+
+// Cache le bock chnbjour si aucun code postal n'est choisi
+cp.addEventListener('change',()=>{
+    
 });
 
 //appelle la fonction SelectionJour lorsque qu'un nombre de jours est indiqué
