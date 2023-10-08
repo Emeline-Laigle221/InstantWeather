@@ -3,7 +3,7 @@ const communeSelect = document.getElementById('SelectVille');
 const apiUrl = 'https://geo.api.gouv.fr/communes?codePostal=';
 const cp = document.getElementById("cp");
 const nbjour = document.getElementById("nbjour");
-const depardieu = document.getElementById("depardieu");
+const chJour = document.getElementById("chJour");
 const SelectJour = document.getElementById("SelectJour");
 const envoieNbJours = document.getElementById("envoyer2");
 const erreurnbjour = document.getElementById("erreurnbjour");
@@ -128,23 +128,42 @@ cp.addEventListener('change',()=>{
     }
 });
 
+// Cache le bock chnbjour si aucun code postal n'est choisi
+cp.addEventListener('change',()=>{
+    let nb_cp = parseInt(cp.value)
+
+    if(nb_cp > 9999){
+        communeSelect.disabled = false
+        envoyer.disabled = false
+        chercheCP();
+        afficheSelectVille.style.display = 'block';
+        chnbjour.style.display = 'block';
+
+    }else{
+        communeSelect.disabled = true
+        envoyer.disabled = true
+        afficheSelectVille.style.display = 'none';
+        chnbjour.style.display = 'none';
+    }
+});
+
 //appelle la fonction SelectionJour lorsque qu'un nombre de jours est indiqué
 
 nbjour.addEventListener('change', ()=>{
     let nb_j = parseInt(nbjour.value)
 
     if(nb_j >= 1  && nb_j <= 14){
-        depardieu.style.display = 'block';
+        chJour.style.display = 'block';
         erreurnbjour.style.display = 'none';
         SelectionJour();
     }
     else if(isNaN(nb_j)){
         erreurnbjour.style.display = 'none';
-        depardieu.style.display = 'none';
+        chJour.style.display = 'none';
     }
     else{
         erreurnbjour.style.display = 'block';
-        depardieu.style.display = 'none';
+        chJour.style.display = 'none';
     }
 });
 

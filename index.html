@@ -34,26 +34,26 @@
             </div>
             <div class="info formulaire">
                 <div>
-                    <label >CODE POSTALE : </label>
+                    <label for="cp">CODE POSTALE : </label>
                     <input type="text" id="cp" maxlength="5" placeholder="Renseigner le code postal"/>
                 </div>
                 <div id="afficheSelectVille" style="display: none;">
                     <label for="SelectVille">VILLE : </label>
-                    <select id="SelectVille" disable="true"></select>
+                    <select id="SelectVille" disabled></select>
                     
                 </div>
-                <div>
-                    <label >NOMBRE DE JOUR : </label>
+                <div id="chnbjour" style="display: none;">
+                    <label for="nbjour">NOMBRE DE JOUR : </label>
                     <input type="number" id="nbjour" min="1" max="14"/>
                 </div>
                 <p id="erreurnbjour" style="display: none;">Veuillez saisir une valeur entre 1 et 14.</p>
-                <div id="depardieu" style="display: none;">
-                    <label >CHOIX JOUR : </label>
-                    <select id="SelectJour" disable="true"></select>
+                <div id="chJour" style="display: none;">
+                    <label for="SelectJour">CHOIX JOUR : </label>
+                    <select id="SelectJour"></select>
                     
                     <!--<button id="envoyer2" onclick="scrollToSection2()">Envoyer</button>-->
                 </div>
-                <button class="bouton" id="envoyer" onclick="scrollALaSection2()" disabled="true">Rechercher</button>
+                <button class="bouton" id="envoyer" onclick="scrollALaSection2()" disabled>Rechercher</button>
 
             </div>
             <div class="deco bas">
