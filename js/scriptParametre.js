@@ -11,7 +11,7 @@ const probabilite = document.getElementById("probabilite");
 const precipitation = document.getElementById("precipitation");
 
 
-//Cocher les paramètres déja coché
+//Cocher les paramètres déja affiché
 if(localStorage.getItem('longitude') == 'true'){
     longitude.checked = true;
     if(localStorage.getItem('latitude') == 'true'){
@@ -49,7 +49,6 @@ if(localStorage.getItem('precipitation') == 'true'){
     }
 }
 
-
 // Selection des paramètre de coordonnées
 coordonees.addEventListener('change', ()=>{
     if(coordonees.checked){
@@ -64,11 +63,8 @@ coordonees.addEventListener('change', ()=>{
 
 // Selection du paramètre coordonnée si les sous paramètre sont coché
 function verifCoordonnee(){
-    if(longitude.checked && latitude.checked){
-        coordonees.checked = true;
-    }else{
-        coordonees.checked = false;
-    }
+    const coordChecked = longitude.checked && latitude.checked;
+    coordonees.checked = coordChecked;
 }
 
 longitude.addEventListener('change',()=>{
@@ -92,11 +88,8 @@ vent.addEventListener('change', ()=>{
 
 // Selection du paramètre vent si les sous paramètre sont coché
 function verifVent(){
-    if(vitesse.checked && direction.checked){
-        vent.checked = true;
-    }else{
-        vent.checked = false;
-    }
+    const ventChecked = vitesse.checked && direction.checked;
+    vent.checked = ventChecked;
 }
 
 vitesse.addEventListener('change',()=>{
@@ -120,11 +113,8 @@ pluie.addEventListener('change', ()=>{
 
 // Selection du paramètre pluie si les sous paramètre sont coché
 function verifPluie(){
-    if(probabilite.checked && precipitation.checked){
-        pluie.checked = true;
-    }else{
-        pluie.checked = false;
-    }
+    const pluieChecked = probabilite.checked && precipitation.checked;
+    pluie.checked = pluieChecked;
 }
 probabilite.addEventListener('change',()=>{
     verifPluie();
@@ -142,4 +132,3 @@ valider.addEventListener('click', ()=>{
     localStorage.setItem('probabilite', probabilite.checked);
     localStorage.setItem('precipitation', precipitation.checked);
 });
-
