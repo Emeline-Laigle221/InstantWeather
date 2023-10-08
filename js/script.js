@@ -130,11 +130,6 @@ cp.addEventListener('change',()=>{
     }
 });
 
-// Cache le bock chnbjour si aucun code postal n'est choisi
-cp.addEventListener('change',()=>{
-    
-});
-
 //appelle la fonction SelectionJour lorsque qu'un nombre de jours est indiqué
 
 nbjour.addEventListener('change', ()=>{
