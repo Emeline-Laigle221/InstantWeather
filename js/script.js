@@ -220,6 +220,7 @@ function traitementMeteoJours(){
             // Effectue une requête fetch pour obtenir les données météorologiques pour le jour choisi et la ville choisi
         fetch(`https://api.meteo-concept.com/api/forecast/daily?token=78566df65679384cb5aef99952feed7743b1c622f6cf67fb152c48716c77bce9&insee=${commune}`).then(response=> 
             response.json().then(data => {
+                console.log(data);
                 document.getElementById('tMin').textContent=data.forecast[jour].tmin + "°C"; //met à jour la température minimal de la ville sélectionnée 
                 document.getElementById('tMax').textContent=data.forecast[jour].tmax + "°C"; //met à jour la température maximal de la ville sélectionnée 
                 document.getElementById('probabilite').textContent=data.forecast[jour].probarain + "%"; //met à jour la probabilité de pluie en % de la ville sélectionnée 
@@ -244,7 +245,6 @@ function traitementMeteoJours(){
 
 function creer_date(date){
     let chaine_date = "";
-
     //Ajout du jour de la semaine
     if(date.getDay()== 1){
         chaine_date += "Lundi";
@@ -258,7 +258,7 @@ function creer_date(date){
         chaine_date += "Vendredi";
     }else if(date.getDay()== 6){
         chaine_date += "Samedi";
-    }else if(date.getDay()== 7){
+    }else if(date.getDay()== 0){
         chaine_date += "Dimanche";
     }
 
