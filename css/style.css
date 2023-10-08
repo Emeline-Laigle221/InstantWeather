@@ -81,20 +81,24 @@ nav>a{
 }
 
 .formulaire{
-    width: 493px;
-    height: 136px;
+    width: 430px;
+    height: 206px;
     margin-top: 50px;
     padding: 10px;
     display: grid;
-    grid-template-columns: 150px 300px;
+    grid-template-columns: 350px;
+    grid-template-rows: 50px 50px 50px;
+    align-content: center;
+    align-items: stretch;
 }
 
 .bouton{
     grid-column-start: 1;
-    grid-column-end: 3;
+    grid-column-end: 2;
     width: 70%;
     display: block;
     margin: auto;
+    margin-top: 5%;
     border-radius: 50px;
     border: #393c69 solid 1px;
 }
@@ -275,8 +279,21 @@ footer{
         font-size: large;
     }
 
+    .titre{
+        font-size: xx-large;
+        margin-left: 100px;
+    }
+
+    .info>h2{
+        font-size: x-large;
+    }
+
     h2{
-        padding-left: 20px; 
+        padding: 0 10px 0 10px; 
+    }
+
+    #cp, #SelectVille {
+        width: 40%;
     }
 
     .case{
@@ -292,6 +309,10 @@ footer{
         grid-template-rows: 50px 108.962px;
         justify-items: center;
     }
+
+    .formulaire{
+        height: 250px;
+    }
 }
 
 /* Modification pour mobile */
@@ -303,6 +324,8 @@ footer{
 
     .info{
         margin-top: 100px;
+        width: 80%;
+        text-align: center;
     }
 
     .titre{
@@ -322,10 +345,6 @@ footer{
         color: black;
         text-decoration: none;
         font-size: larger;
-    }
-    
-    .info{
-        width: 80%;
     }
 
     h2{
@@ -360,16 +379,20 @@ footer{
 
     .formulaire{
         width: 293px;
-        height: 136px;
+        height: 236px;
         margin-top: 50px;
         padding: 10px;
         display: grid;
-        grid-template-columns: 105px 150px;
+        grid-template-columns: 255px;
     }
 
     .donnees-sup-grid{
         height: 150px;
         grid-template-rows: 50px 100px;
+    }
+
+    #cp, #SelectVille {
+        width: 40%;
     }
 
     /* partie parametre */
@@ -386,5 +409,12 @@ footer{
     .param{
         padding: 30px 0;
         height: 640px;
+    }
+}
+
+@media screen and (min-width: 340px) and (max-width: 580px){
+    .temps{
+        flex-direction: column;
+        align-items: center;
     }
 }
